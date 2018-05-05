@@ -1,0 +1,116 @@
+﻿生成启动时间为 2018/5/1 22:04:29。
+     1>项目“c:\Users\creeperjimthu\documents\visual studio 2012\Projects\devil tower\devil tower\devil tower.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt man.cpp
+         man.cpp
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(41): error C2065: “DodgeProbablity”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(41): error C2668: “sqrt”: 对重载函数的调用不明确
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\math.h(588): 可能是“long double sqrt(long double)”
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\math.h(540): 或       “float sqrt(float)”
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\math.h(127): 或       “double sqrt(double)”
+                 尝试匹配参数列表“(int)”时
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(56): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(70): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(76): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(78): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(78): error C3861: “fight”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(81): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(83): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(87): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(91): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(95): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(99): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(103): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(110): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(112): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(116): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(120): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(126): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(133): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(140): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(147): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(149): error C3861: “MoneyPurchase”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(151): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(153): error C3861: “ExperiencePurchase”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(155): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(163): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(173): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(181): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(191): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(193): error C3861: “TalkElder”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(195): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(197): error C3861: “TalkMerchant”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(199): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(201): error C3861: “TalkPrincess”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(203): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(205): error C3861: “TalkBoss”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(216): error C3861: “display”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(224): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(230): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(232): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(232): error C3861: “fight”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(235): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(237): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(241): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(245): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(249): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(253): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(257): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(265): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(267): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(271): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(275): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(281): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(288): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(295): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(302): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(304): error C3861: “MoneyPurchase”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(306): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(308): error C3861: “ExperiencePurchase”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(310): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(318): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(328): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(336): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(346): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(348): error C3861: “TalkElder”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(350): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(352): error C3861: “TalkMerchant”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(354): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(356): error C3861: “TalkPrincess”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(358): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(360): error C3861: “TalkBoss”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(371): error C3861: “display”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(380): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(386): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(388): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(388): error C3861: “fight”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(391): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(393): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(397): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(401): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(405): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(409): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(413): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(421): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(423): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(427): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(431): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(437): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(444): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(451): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(458): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(460): error C3861: “MoneyPurchase”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(462): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(464): error C3861: “ExperiencePurchase”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(466): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(474): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(484): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(492): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(502): error C2065: “map”: 未声明的标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(504): error C3861: “TalkElder”: 找不到标识符
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\man.cpp(504): fatal error C1003: 错误计数超过 100；正在停止编译
+     1>已完成生成项目“c:\Users\creeperjimthu\documents\visual studio 2012\Projects\devil tower\devil tower\devil tower.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.92
