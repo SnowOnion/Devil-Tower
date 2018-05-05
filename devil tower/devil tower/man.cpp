@@ -1,23 +1,23 @@
-#include <math.h>
+ï»¿#include <math.h>
 #include <graphics.h>
 #include <conio.h>
 
-extern int Health = 1000;                                  //ÑªÁ¿
-extern int Attack = 10;                                    //¹¥»÷Á¦
-extern int Defense = 10;                                   //·ÀÓùÁ¦
-extern int Agility = 1;                                    //Ãô½İ¶È
+extern int Health = 1000;                                  //è¡€é‡
+extern int Attack = 10;                                    //æ”»å‡»åŠ›
+extern int Defense = 10;                                   //é˜²å¾¡åŠ›
+extern int Agility = 1;                                    //æ•æ·åº¦
 extern int DodgeProbability;
-extern bool HasTransfer = false;                           //ÓĞÌøÂ¥²ãÉñÆ÷
-extern bool HasDictionary = false;                         //ÓĞ¹ÖÎï±¦µä
-extern int YellowKey = 0;                                  //»ÆÔ¿³×ÊıÄ¿
-extern int BlueKey = 0;                                    //À¶Ô¿³×ÊıÄ¿
-extern int RedKey = 0;                                     //ºìÔ¿³×ÊıÄ¿
-extern int yman;                                           //Ó¢ĞÛµÄy×ø±ê
-extern int xman;                                           //Ó¢ĞÛµÄx×ø±ê
-extern int z = 0;                                          //Ó¢ĞÛËùÔÚµÄÂ¥²ãÊı
-extern int Money = 0;                                      //½ğÇ®Êı
-extern int Experience = 0;                                 //¾­ÑéÊı
-extern int level = 1;                                      //µÈ¼¶Êı
+extern bool HasTransfer = false;                           //æœ‰è·³æ¥¼å±‚ç¥å™¨
+extern bool HasDictionary = false;                         //æœ‰æ€ªç‰©å®å…¸
+extern int YellowKey = 0;                                  //é»„é’¥åŒ™æ•°ç›®
+extern int BlueKey = 0;                                    //è“é’¥åŒ™æ•°ç›®
+extern int RedKey = 0;                                     //çº¢é’¥åŒ™æ•°ç›®
+extern int yman;                                           //è‹±é›„çš„yåæ ‡
+extern int xman;                                           //è‹±é›„çš„xåæ ‡
+extern int z = 0;                                          //è‹±é›„æ‰€åœ¨çš„æ¥¼å±‚æ•°
+extern int Money = 0;                                      //é‡‘é’±æ•°
+extern int Experience = 0;                                 //ç»éªŒæ•°
+extern int level = 1;                                      //ç­‰çº§æ•°
 
 
 void AddAttack (int Increment)
@@ -67,92 +67,92 @@ void move (int z)
             if (yman+1 <= 16)
             {
                 SetMap(z,xman,yman,101);
-                if (map[z][xman][yman+1] == 0)                                            //Ç°·½ÊÇ¿ÕµØ
+                if (map[z][xman][yman+1] == 0)                                            //å‰æ–¹æ˜¯ç©ºåœ°
                 {
                     yman += 1;
                     SetMap(z,xman,yman,101);
                     SetMap(z,xman,yman-1,0);
                 }
-                else if ((map[z][xman][yman+1] >= 300)&&(map[z][xman][yman+1] <= 500))        //Ç°·½ÊÇ¹ÖÎï
+                else if ((map[z][xman][yman+1] >= 300)&&(map[z][xman][yman+1] <= 500))        //å‰æ–¹æ˜¯æ€ªç‰©
                 {
                     fight(map[z][xman][yman+1]);
                     SetMap(z,xman,yman+1,0);
                 }
-                else if ((map[z][xman][yman+1] >= 200)&&(map[z][xman][yman+1] <= 299))         //Ç°·½ÊÇ±¦Ê¯£¬ÑªÒ©
+                else if ((map[z][xman][yman+1] >= 200)&&(map[z][xman][yman+1] <= 299))         //å‰æ–¹æ˜¯å®çŸ³ï¼Œè¡€è¯
                 {
-                    if(map[z][xman][yman+1] == 206)                                           //Ğ¡ÑªÆ¿
+                    if(map[z][xman][yman+1] == 206)                                           //å°è¡€ç“¶
                     {
                         AddHealth(200);
                     }
-                    else if(map[z][xman][yman+1] == 207)                                      //ÖĞÑªÆ¿
+                    else if(map[z][xman][yman+1] == 207)                                      //ä¸­è¡€ç“¶
                     {
                         AddHealth(500);
                     }
-                    else if(map[z][xman][yman+1] == 208)                                      //´óÑªÆ¿
+                    else if(map[z][xman][yman+1] == 208)                                      //å¤§è¡€ç“¶
                     {
                         AddHealth(1000);
                     }
-                    else if(map[z][xman][yman+1] == 203)                                      //¹¥»÷±¦Ê¯£¬ºì±¦Ê¯
+                    else if(map[z][xman][yman+1] == 203)                                      //æ”»å‡»å®çŸ³ï¼Œçº¢å®çŸ³
                     {
                         AddAttack(3);
                     }
-                    else if(map[z][xman][yman+1] == 204)                                      //·ÀÓù±¦Ê¯£¬À¶±¦Ê¯
+                    else if(map[z][xman][yman+1] == 204)                                      //é˜²å¾¡å®çŸ³ï¼Œè“å®çŸ³
                     {
                         AddDefense(3);
                     }
-                    else if(map[z][xman][yman+1] == 205)                                      //Ãô½İ±¦Ê¯£¬ÂÌ±¦Ê¯
+                    else if(map[z][xman][yman+1] == 205)                                      //æ•æ·å®çŸ³ï¼Œç»¿å®çŸ³
                     {
                         AddAgility(1);
                     }
                     yman += 1;
                     SetMap(z,xman,yman-1,0);
                 }
-                else if ((map[z][xman][yman+1] >= 2)&&(map[z][xman][yman+1] <=4 ))         //Ç°·½ÊÇÃÅ
+                else if ((map[z][xman][yman+1] >= 2)&&(map[z][xman][yman+1] <=4 ))         //å‰æ–¹æ˜¯é—¨
                 {
-                    if ((map[z][xman][yman+1] == 2)&&(YellowKey>0))                          //»ÆÃÅ
+                    if ((map[z][xman][yman+1] == 2)&&(YellowKey>0))                          //é»„é—¨
                     {
                         YellowKey -= 1;
                     }
-                    else if ((map[z][xman][yman+1] == 3)&&(BlueKey>0))                       //À¶ÃÅ
+                    else if ((map[z][xman][yman+1] == 3)&&(BlueKey>0))                       //è“é—¨
                     {
                         BlueKey -= 1;
                     }
-                    else if ((map[z][xman][yman+1] == 4)&&(RedKey>0))                        //ºìÃÅ
+                    else if ((map[z][xman][yman+1] == 4)&&(RedKey>0))                        //çº¢é—¨
                     {
                         RedKey -= 1;
                     }
                     SetMap(z,xman,yman+1,0);
                 }
-                else if (map[z][xman][yman+1] == 209)                                          //Ìø²ãµÀ¾ß
+                else if (map[z][xman][yman+1] == 209)                                          //è·³å±‚é“å…·
                 {
                     HasTransfer = true;
                     yman += 1;
                     SetMap(z,xman,yman,101);
                     SetMap(z,xman,yman-1,0);
                 }
-                else if (map[z][xman][yman+1] == 210)                                          //×Öµä
+                else if (map[z][xman][yman+1] == 210)                                          //å­—å…¸
                 {
                     HasDictionary = true;
                     yman += 1;
                     SetMap(z,xman,yman,101);
                     SetMap(z,xman,yman-1,0);
                 }
-                else if (map[z][xman][yman+1] == 211)                                           //´ó½ğ±Ò
+                else if (map[z][xman][yman+1] == 211)                                           //å¤§é‡‘å¸
                 {
                     AddMoney(100);
                     yman += 1;
                     SetMap(z,xman,yman,101);
                     SetMap(z,xman,yman-1,0);
                 }
-                else if (map[z][xman][yman+1] == 10)                                             //»¨Ç®ÉÌµê
+                else if (map[z][xman][yman+1] == 10)                                             //èŠ±é’±å•†åº—
                 {
                     MoneyPurchase();
                 }
-                else if (map[z][xman][yman+1] == 11)                                             //¾­ÑéÉÌµê
+                else if (map[z][xman][yman+1] == 11)                                             //ç»éªŒå•†åº—
                 {
                     ExperiencePurchase();
                 }
-                else if (map[z][xman][yman+1] == 8)                                              //ÉÏÂ¥
+                else if (map[z][xman][yman+1] == 8)                                              //ä¸Šæ¥¼
                 {
                     z += 1;
                     int i=0,j=0;
@@ -170,7 +170,7 @@ void move (int z)
                         }
                     }
                 }
-                else if (map[z][xman][yman+1] == 9)                                                //ÏÂÂ¥
+                else if (map[z][xman][yman+1] == 9)                                                //ä¸‹æ¥¼
                 {
                     z -= 1;
                     int i=0,j=0;
@@ -188,19 +188,19 @@ void move (int z)
                         }
                     }
                 }
-                else if (map[z][xman][yman+1] == 104)                                            //Óë°×·¢ÀÏÈË½²»°
+                else if (map[z][xman][yman+1] == 104)                                            //ä¸ç™½å‘è€äººè®²è¯
                 {
                     TalkElder(z);
                 }
-                else if (map[z][xman][yman+1] == 105)                                            //ÓëÉÌÈËÌ¸»°
+                else if (map[z][xman][yman+1] == 105)                                            //ä¸å•†äººè°ˆè¯
                 {
                     TalkMerchant(z);
                 }
-                else if (map[z][xman][yman+1] == 106)                                            //Óë¹«Ö÷Ì¸»°
+                else if (map[z][xman][yman+1] == 106)                                            //ä¸å…¬ä¸»è°ˆè¯
                 {
                     TalkPrincess();
                 }
-                else if (map[z][xman][yman+1] == 107)                                            //ÓëBossÌ¸»°
+                else if (map[z][xman][yman+1] == 107)                                            //ä¸Bossè°ˆè¯
                 {
                     TalkBoss();
                 }
@@ -221,40 +221,40 @@ void move (int z)
             if (yman-1 >= 0)
             {
                 SetMap(z,xman,yman,100);
-                if (map[z][xman][yman-1] == 0)                                            //Ç°·½ÊÇ¿ÕµØ
+                if (map[z][xman][yman-1] == 0)                                            //å‰æ–¹æ˜¯ç©ºåœ°
                 {
                     yman -= 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman,yman+1,0);
                 }
-                else if ((map[z][xman][yman-1] >= 300)&&(map[z][xman][yman-1] <= 500))        //Ç°·½ÊÇ¹ÖÎï
+                else if ((map[z][xman][yman-1] >= 300)&&(map[z][xman][yman-1] <= 500))        //å‰æ–¹æ˜¯æ€ªç‰©
                 {
                     fight(map[z][xman][yman-1]);
                     SetMap(z,xman,yman-1,0);
                 }
-                else if ((map[z][xman][yman-1] >= 200)&&(map[z][xman][yman-1] <= 299))         //Ç°·½ÊÇ±¦Ê¯£¬ÑªÒ©
+                else if ((map[z][xman][yman-1] >= 200)&&(map[z][xman][yman-1] <= 299))         //å‰æ–¹æ˜¯å®çŸ³ï¼Œè¡€è¯
                 {
-                    if(map[z][xman][yman-1] == 206)                                           //Ğ¡ÑªÆ¿
+                    if(map[z][xman][yman-1] == 206)                                           //å°è¡€ç“¶
                     {
                         AddHealth(200);
                     }
-                    else if(map[z][xman][yman-1] == 207)                                      //ÖĞÑªÆ¿
+                    else if(map[z][xman][yman-1] == 207)                                      //ä¸­è¡€ç“¶
                     {
                         AddHealth(500);
                     }
-                    else if(map[z][xman][yman-1] == 208)                                      //´óÑªÆ¿
+                    else if(map[z][xman][yman-1] == 208)                                      //å¤§è¡€ç“¶
                     {
                         AddHealth(1000);
                     }
-                    else if(map[z][xman][yman-1] == 203)                                      //¹¥»÷±¦Ê¯£¬ºì±¦Ê¯
+                    else if(map[z][xman][yman-1] == 203)                                      //æ”»å‡»å®çŸ³ï¼Œçº¢å®çŸ³
                     {
                         AddAttack(3);
                     }
-                    else if(map[z][xman][yman-1] == 204)                                      //·ÀÓù±¦Ê¯£¬À¶±¦Ê¯
+                    else if(map[z][xman][yman-1] == 204)                                      //é˜²å¾¡å®çŸ³ï¼Œè“å®çŸ³
                     {
                         AddDefense(3);
                     }
-                    else if(map[z][xman][yman-1] == 205)                                      //Ãô½İ±¦Ê¯£¬ÂÌ±¦Ê¯
+                    else if(map[z][xman][yman-1] == 205)                                      //æ•æ·å®çŸ³ï¼Œç»¿å®çŸ³
                     {
                         AddAgility(1);
                     }
@@ -262,52 +262,52 @@ void move (int z)
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman,yman+1,0);
                 }
-                else if ((map[z][xman][yman-1] >= 2)&&(map[z][xman][yman-1] <=4 ))         //Ç°·½ÊÇÃÅ
+                else if ((map[z][xman][yman-1] >= 2)&&(map[z][xman][yman-1] <=4 ))         //å‰æ–¹æ˜¯é—¨
                 {
-                    if ((map[z][xman][yman-1] == 2)&&(YellowKey>0))                          //»ÆÃÅ
+                    if ((map[z][xman][yman-1] == 2)&&(YellowKey>0))                          //é»„é—¨
                     {
                         YellowKey -= 1;
                     }
-                    else if ((map[z][xman][yman-1] == 3)&&(BlueKey>0))                       //À¶ÃÅ
+                    else if ((map[z][xman][yman-1] == 3)&&(BlueKey>0))                       //è“é—¨
                     {
                         BlueKey -= 1;
                     }
-                    else if ((map[z][xman][yman-1] == 4)&&(RedKey>0))                        //ºìÃÅ
+                    else if ((map[z][xman][yman-1] == 4)&&(RedKey>0))                        //çº¢é—¨
                     {
                         RedKey -= 1;
                     }
                     SetMap(z,xman,yman-1,0);
                 }
-                else if (map[z][xman][yman-1] == 209)                                          //Ìø²ãµÀ¾ß
+                else if (map[z][xman][yman-1] == 209)                                          //è·³å±‚é“å…·
                 {
                     HasTransfer = true;
                     yman -= 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman,yman+1,0);
                 }
-                else if (map[z][xman][yman-1] == 210)                                          //×Öµä
+                else if (map[z][xman][yman-1] == 210)                                          //å­—å…¸
                 {
                     HasDictionary = true;
                     yman -= 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman,yman+1,0);
                 }
-                else if (map[z][xman][yman-1] == 211)                                           //´ó½ğ±Ò
+                else if (map[z][xman][yman-1] == 211)                                           //å¤§é‡‘å¸
                 {
                     AddMoney(100);
                     yman -= 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman,yman-1,0);
                 }
-                else if (map[z][xman][yman-1] == 10)                                             //»¨Ç®ÉÌµê
+                else if (map[z][xman][yman-1] == 10)                                             //èŠ±é’±å•†åº—
                 {
                     MoneyPurchase();
                 }
-                else if (map[z][xman][yman-1] == 11)                                             //¾­ÑéÉÌµê
+                else if (map[z][xman][yman-1] == 11)                                             //ç»éªŒå•†åº—
                 {
                     ExperiencePurchase();
                 }
-                else if (map[z][xman][yman-1] == 8)                                              //ÉÏÂ¥
+                else if (map[z][xman][yman-1] == 8)                                              //ä¸Šæ¥¼
                 {
                     z += 1;
                     int i=0,j=0;
@@ -325,7 +325,7 @@ void move (int z)
                         }
                     }
                 }
-                else if (map[z][xman][yman-1] == 9)                                               //ÏÂÂ¥
+                else if (map[z][xman][yman-1] == 9)                                               //ä¸‹æ¥¼
                 {
                     z -= 1;
                     int i=0,j=0;
@@ -343,19 +343,19 @@ void move (int z)
                         }
                     }
                 }
-                else if (map[z][xman][yman+1] == 104)                                            //Óë°×·¢ÀÏÈË½²»°
+                else if (map[z][xman][yman+1] == 104)                                            //ä¸ç™½å‘è€äººè®²è¯
                 {
                     TalkElder(z);
                 }
-                else if (map[z][xman][yman+1] == 105)                                            //ÓëÉÌÈËÌ¸»°
+                else if (map[z][xman][yman+1] == 105)                                            //ä¸å•†äººè°ˆè¯
                 {
                     TalkMerchant(z);
                 }
-                else if (map[z][xman][yman+1] == 106)                                            //Óë¹«Ö÷Ì¸»°
+                else if (map[z][xman][yman+1] == 106)                                            //ä¸å…¬ä¸»è°ˆè¯
                 {
                     TalkPrincess();
                 }
-                else if (map[z][xman][yman+1] == 107)                                            //ÓëBossÌ¸»°
+                else if (map[z][xman][yman+1] == 107)                                            //ä¸Bossè°ˆè¯
                 {
                     TalkBoss();
                 }
@@ -377,40 +377,40 @@ void move (int z)
             if (xman-1 >= 0)
             {
                 SetMap(z,xman,yman,100);
-                if (map[z][xman-1][yman] == 0)                                            //Ç°·½ÊÇ¿ÕµØ
+                if (map[z][xman-1][yman] == 0)                                            //å‰æ–¹æ˜¯ç©ºåœ°
                 {
                     xman -= 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman+1,yman,0);
                 }
-                else if ((map[z][xman-1][yman] >= 300)&&(map[z][xman-1][yman] <= 500))        //Ç°·½ÊÇ¹ÖÎï
+                else if ((map[z][xman-1][yman] >= 300)&&(map[z][xman-1][yman] <= 500))        //å‰æ–¹æ˜¯æ€ªç‰©
                 {
                     fight(map[z][xman-1][yman]);
                     SetMap(z,xman-1,yman,0);
                 }
-                else if ((map[z][xman-1][yman] >= 200)&&(map[z][xman-1][yman] <= 299))         //Ç°·½ÊÇ±¦Ê¯£¬ÑªÒ©
+                else if ((map[z][xman-1][yman] >= 200)&&(map[z][xman-1][yman] <= 299))         //å‰æ–¹æ˜¯å®çŸ³ï¼Œè¡€è¯
                 {
-                    if(map[z][xman-1][yman] == 206)                                           //Ğ¡ÑªÆ¿
+                    if(map[z][xman-1][yman] == 206)                                           //å°è¡€ç“¶
                     {
                         AddHealth(200);
                     }
-                    else if(map[z][xman-1][yman] == 207)                                      //ÖĞÑªÆ¿
+                    else if(map[z][xman-1][yman] == 207)                                      //ä¸­è¡€ç“¶
                     {
                         AddHealth(500);
                     }
-                    else if(map[z][xman-1][yman] == 208)                                      //´óÑªÆ¿
+                    else if(map[z][xman-1][yman] == 208)                                      //å¤§è¡€ç“¶
                     {
                         AddHealth(1000);
                     }
-                    else if(map[z][xman-1][yman] == 203)                                      //¹¥»÷±¦Ê¯£¬ºì±¦Ê¯
+                    else if(map[z][xman-1][yman] == 203)                                      //æ”»å‡»å®çŸ³ï¼Œçº¢å®çŸ³
                     {
                         AddAttack(3);
                     }
-                    else if(map[z][xman-1][yman] == 204)                                      //·ÀÓù±¦Ê¯£¬À¶±¦Ê¯
+                    else if(map[z][xman-1][yman] == 204)                                      //é˜²å¾¡å®çŸ³ï¼Œè“å®çŸ³
                     {
                         AddDefense(3);
                     }
-                    else if(map[z][xman-1][yman] == 205)                                      //Ãô½İ±¦Ê¯£¬ÂÌ±¦Ê¯
+                    else if(map[z][xman-1][yman] == 205)                                      //æ•æ·å®çŸ³ï¼Œç»¿å®çŸ³
                     {
                         AddAgility(1);
                     }
@@ -418,52 +418,52 @@ void move (int z)
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman+1,yman,0);
                 }
-                else if ((map[z][xman-1][yman] >= 2)&&(map[z][xman-1][yman] <=4 ))         //Ç°·½ÊÇÃÅ
+                else if ((map[z][xman-1][yman] >= 2)&&(map[z][xman-1][yman] <=4 ))         //å‰æ–¹æ˜¯é—¨
                 {
-                    if ((map[z][xman-1][yman] == 2)&&(YellowKey>0))                          //»ÆÃÅ
+                    if ((map[z][xman-1][yman] == 2)&&(YellowKey>0))                          //é»„é—¨
                     {
                         YellowKey -= 1;
                     }
-                    else if ((map[z][xman-1][yman] == 3)&&(BlueKey>0))                       //À¶ÃÅ
+                    else if ((map[z][xman-1][yman] == 3)&&(BlueKey>0))                       //è“é—¨
                     {
                         BlueKey -= 1;
                     }
-                    else if ((map[z][xman-1][yman] == 4)&&(RedKey>0))                        //ºìÃÅ
+                    else if ((map[z][xman-1][yman] == 4)&&(RedKey>0))                        //çº¢é—¨
                     {
                         RedKey -= 1;
                     }
                     SetMap(z,xman-1,yman,0);
                 }
-                else if (map[z][xman-1][yman] == 209)                                          //Ìø²ãµÀ¾ß
+                else if (map[z][xman-1][yman] == 209)                                          //è·³å±‚é“å…·
                 {
                     HasTransfer = true;
                     xman -= 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman+1,yman,0);
                 }
-                else if (map[z][xman-1][yman] == 210)                                          //×Öµä
+                else if (map[z][xman-1][yman] == 210)                                          //å­—å…¸
                 {
                     HasDictionary = true;
                     xman -= 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman+1,yman,0);
                 }
-                else if (map[z][xman-1][yman] == 211)                                           //´ó½ğ±Ò
+                else if (map[z][xman-1][yman] == 211)                                           //å¤§é‡‘å¸
                 {
                     AddMoney(100);
                     xman -= 1;
                     SetMap(z,xman-1,yman,100);
                     SetMap(z,xman,yman,0);
                 }
-                else if (map[z][xman-1][yman] == 10)                                             //»¨Ç®ÉÌµê
+                else if (map[z][xman-1][yman] == 10)                                             //èŠ±é’±å•†åº—
                 {
                     MoneyPurchase();
                 }
-                else if (map[z][xman-1][yman] == 11)                                             //¾­ÑéÉÌµê
+                else if (map[z][xman-1][yman] == 11)                                             //ç»éªŒå•†åº—
                 {
                     ExperiencePurchase();
                 }
-                else if (map[z][xman-1][yman] == 8)                                              //ÉÏÂ¥
+                else if (map[z][xman-1][yman] == 8)                                              //ä¸Šæ¥¼
                 {
                     z += 1;
                     int i=0,j=0;
@@ -481,7 +481,7 @@ void move (int z)
                         }
                     }
                 }
-                else if (map[z][xman-1][yman] == 9)                                               //ÏÂÂ¥
+                else if (map[z][xman-1][yman] == 9)                                               //ä¸‹æ¥¼
                 {
                     z -= 1;
                     int i=0,j=0;
@@ -499,19 +499,19 @@ void move (int z)
                         }
                     }
                 }
-                else if (map[z][xman-1][yman] == 104)                                            //Óë°×·¢ÀÏÈË½²»°
+                else if (map[z][xman-1][yman] == 104)                                            //ä¸ç™½å‘è€äººè®²è¯
                 {
                     TalkElder(z);
                 }
-                else if (map[z][xman-1][yman] == 105)                                            //ÓëÉÌÈËÌ¸»°
+                else if (map[z][xman-1][yman] == 105)                                            //ä¸å•†äººè°ˆè¯
                 {
                     TalkMerchant(z);
                 }
-                else if (map[z][xman-1][yman] == 106)                                            //Óë¹«Ö÷Ì¸»°
+                else if (map[z][xman-1][yman] == 106)                                            //ä¸å…¬ä¸»è°ˆè¯
                 {
                     TalkPrincess();
                 }
-                else if (map[z][xman-1][yman] == 107)                                            //ÓëBossÌ¸»°
+                else if (map[z][xman-1][yman] == 107)                                            //ä¸Bossè°ˆè¯
                 {
                     TalkBoss();
                 }
@@ -533,40 +533,40 @@ void move (int z)
             if (xman+1 >= 0)
             {
                 SetMap(z,xman,yman,100);
-                if (map[z][xman+1][yman] == 0)                                            //Ç°·½ÊÇ¿ÕµØ
+                if (map[z][xman+1][yman] == 0)                                            //å‰æ–¹æ˜¯ç©ºåœ°
                 {
                     xman += 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman-1,yman,0);
                 }
-                else if ((map[z][xman+1][yman] >= 300)&&(map[z][xman+1][yman] <= 500))        //Ç°·½ÊÇ¹ÖÎï
+                else if ((map[z][xman+1][yman] >= 300)&&(map[z][xman+1][yman] <= 500))        //å‰æ–¹æ˜¯æ€ªç‰©
                 {
                     fight(map[z][xman+1][yman]);
                     SetMap(z,xman+1,yman,0);
                 }
-                else if ((map[z][xman+1][yman] >= 200)&&(map[z][xman+1][yman] <= 299))         //Ç°·½ÊÇ±¦Ê¯£¬ÑªÒ©
+                else if ((map[z][xman+1][yman] >= 200)&&(map[z][xman+1][yman] <= 299))         //å‰æ–¹æ˜¯å®çŸ³ï¼Œè¡€è¯
                 {
-                    if(map[z][xman+1][yman] == 206)                                           //Ğ¡ÑªÆ¿
+                    if(map[z][xman+1][yman] == 206)                                           //å°è¡€ç“¶
                     {
                         AddHealth(200);
                     }
-                    else if(map[z][xman+1][yman] == 207)                                      //ÖĞÑªÆ¿
+                    else if(map[z][xman+1][yman] == 207)                                      //ä¸­è¡€ç“¶
                     {
                         AddHealth(500);
                     }
-                    else if(map[z][xman+1][yman] == 208)                                      //´óÑªÆ¿
+                    else if(map[z][xman+1][yman] == 208)                                      //å¤§è¡€ç“¶
                     {
                         AddHealth(1000);
                     }
-                    else if(map[z][xman+1][yman] == 203)                                      //¹¥»÷±¦Ê¯£¬ºì±¦Ê¯
+                    else if(map[z][xman+1][yman] == 203)                                      //æ”»å‡»å®çŸ³ï¼Œçº¢å®çŸ³
                     {
                         AddAttack(3);
                     }
-                    else if(map[z][xman+1][yman] == 204)                                      //·ÀÓù±¦Ê¯£¬À¶±¦Ê¯
+                    else if(map[z][xman+1][yman] == 204)                                      //é˜²å¾¡å®çŸ³ï¼Œè“å®çŸ³
                     {
                         AddDefense(3);
                     }
-                    else if(map[z][xman+1][yman] == 205)                                      //Ãô½İ±¦Ê¯£¬ÂÌ±¦Ê¯
+                    else if(map[z][xman+1][yman] == 205)                                      //æ•æ·å®çŸ³ï¼Œç»¿å®çŸ³
                     {
                         AddAgility(1);
                     }
@@ -574,52 +574,52 @@ void move (int z)
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman-1,yman,0);
                 }
-                else if ((map[z][xman+1][yman] >= 2)&&(map[z][xman+1][yman] <=4 ))         //Ç°·½ÊÇÃÅ
+                else if ((map[z][xman+1][yman] >= 2)&&(map[z][xman+1][yman] <=4 ))         //å‰æ–¹æ˜¯é—¨
                 {
-                    if ((map[z][xman+1][yman] == 2)&&(YellowKey>0))                          //»ÆÃÅ
+                    if ((map[z][xman+1][yman] == 2)&&(YellowKey>0))                          //é»„é—¨
                     {
                         YellowKey -= 1;
                     }
-                    else if ((map[z][xman+1][yman] == 3)&&(BlueKey>0))                       //À¶ÃÅ
+                    else if ((map[z][xman+1][yman] == 3)&&(BlueKey>0))                       //è“é—¨
                     {
                         BlueKey -= 1;
                     }
-                    else if ((map[z][xman+1][yman] == 4)&&(RedKey>0))                        //ºìÃÅ
+                    else if ((map[z][xman+1][yman] == 4)&&(RedKey>0))                        //çº¢é—¨
                     {
                         RedKey -= 1;
                     }
                     SetMap(z,xman+1,yman,0);
                 }
-                else if (map[z][xman+1][yman] == 209)                                          //Ìø²ãµÀ¾ß
+                else if (map[z][xman+1][yman] == 209)                                          //è·³å±‚é“å…·
                 {
                     HasTransfer = true;
                     xman += 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman-1,yman,0);
                 }
-                else if (map[z][xman+1][yman] == 210)                                          //×Öµä
+                else if (map[z][xman+1][yman] == 210)                                          //å­—å…¸
                 {
                     HasDictionary = true;
                     xman += 1;
                     SetMap(z,xman,yman,100);
                     SetMap(z,xman-1,yman,0);
                 }
-                else if (map[z][xman+1][yman] == 211)                                           //´ó½ğ±Ò
+                else if (map[z][xman+1][yman] == 211)                                           //å¤§é‡‘å¸
                 {
                     AddMoney(100);
                     xman += 1;
                     SetMap(z,xman+1,yman,100);
                     SetMap(z,xman,yman,0);
                 }
-                else if (map[z][xman+1][yman] == 10)                                             //»¨Ç®ÉÌµê
+                else if (map[z][xman+1][yman] == 10)                                             //èŠ±é’±å•†åº—
                 {
                     MoneyPurchase();
                 }
-                else if (map[z][xman+1][yman] == 11)                                             //¾­ÑéÉÌµê
+                else if (map[z][xman+1][yman] == 11)                                             //ç»éªŒå•†åº—
                 {
                     ExperiencePurchase();
                 }
-                else if (map[z][xman+1][yman] == 8)                                              //ÉÏÂ¥
+                else if (map[z][xman+1][yman] == 8)                                              //ä¸Šæ¥¼
                 {
                     z += 1;
                     int i=0,j=0;
@@ -637,7 +637,7 @@ void move (int z)
                         }
                     }
                 }
-                else if (map[z][xman+1][yman] == 9)                                               //ÏÂÂ¥
+                else if (map[z][xman+1][yman] == 9)                                               //ä¸‹æ¥¼
                 {
                     z -= 1;
                     int i=0,j=0;
@@ -655,19 +655,19 @@ void move (int z)
                         }
                     }
                 }
-                else if (map[z][xman+1][yman] == 104)                                            //Óë°×·¢ÀÏÈË½²»°
+                else if (map[z][xman+1][yman] == 104)                                            //ä¸ç™½å‘è€äººè®²è¯
                 {
                     TalkElder(z);
                 }
-                else if (map[z][xman+1][yman] == 105)                                            //ÓëÉÌÈËÌ¸»°
+                else if (map[z][xman+1][yman] == 105)                                            //ä¸å•†äººè°ˆè¯
                 {
                     TalkMerchant(z);
                 }
-                else if (map[z][xman+1][yman] == 106)                                            //Óë¹«Ö÷Ì¸»°
+                else if (map[z][xman+1][yman] == 106)                                            //ä¸å…¬ä¸»è°ˆè¯
                 {
                     TalkPrincess();
                 }
-                else if (map[z][xman+1][yman] == 107)                                            //ÓëBossÌ¸»°
+                else if (map[z][xman+1][yman] == 107)                                            //ä¸Bossè°ˆè¯
                 {
                     TalkBoss();
                 }
