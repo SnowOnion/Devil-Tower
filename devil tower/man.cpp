@@ -157,11 +157,11 @@ void move ()
 					SetMap(z,xman,yman+1,1);
 				}
 			}
-			else if (map[z][xman][yman+1] == 10)                                             //花钱商店
+			else if (map[z][xman][yman+1] == 10 || map[z][xman - 1][yman + 1] == 10 ||map[z][xman - 2][yman + 1] == 10)                                             //花钱商店
 			{
 				MoneyPurchase(z);
 			}
-			else if (map[z][xman][yman+1] == 11)                                             //经验商店
+			else if (map[z][xman][yman+1] == 11 || map[z][xman - 1][yman + 1] == 11 ||map[z][xman - 2][yman + 1] == 11)                                             //经验商店
 			{
 				ExperiencePurchase(z);
 			}
@@ -213,6 +213,26 @@ void move ()
 				{
 					xman = 16;
 					yman = 15;
+				}
+				else if (z == 11)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 12)
+				{
+					xman = 15;
+					yman = 0;
+				}
+				else if (z == 13)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 14)
+				{
+					xman = 1;
+					yman = 7;
 				}
 				SetMap(z,xman,yman,100);
 				if (z > zmax)
@@ -271,6 +291,26 @@ void move ()
 				{
 					xman = 1;
 					yman = 0;
+				}
+				else if (z == 11)
+				{
+					xman = 0;
+					yman = 1;
+				}
+				else if (z == 12)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 13)
+				{
+					xman = 14;
+					yman = 15;
+				}
+				else if (z == 14)
+				{
+					xman = 15;
+					yman = 8;
 				}
 				SetMap(z,xman,yman,100);
 			}
@@ -390,11 +430,11 @@ void move ()
 					SetMap(z,xman,yman-1,1);
 				}
 			}
-			else if (map[z][xman][yman-1] == 10)                                             //花钱商店
+			else if (map[z][xman][yman-1] == 10 || map[z][xman-1][yman-1] == 10 || map[z][xman-2][yman-1] == 10)                                             //花钱商店
 			{
 				MoneyPurchase(z);
 			}
-			else if (map[z][xman][yman-1] == 11)                                             //经验商店
+			else if (map[z][xman][yman-1] == 11 || map[z][xman-1][yman-1] == 11 || map[z][xman-2][yman-1] == 11)                                             //经验商店
 			{
 				ExperiencePurchase(z);
 			}
@@ -446,6 +486,26 @@ void move ()
 				{
 					xman = 16;
 					yman = 15;
+				}
+				else if (z == 11)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 12)
+				{
+					xman = 15;
+					yman = 0;
+				}
+				else if (z == 13)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 14)
+				{
+					xman = 1;
+					yman = 7;
 				}
 				if (z > zmax)
 					zmax = z;
@@ -504,6 +564,26 @@ void move ()
 				{
 					xman = 1;
 					yman = 0;
+				}
+				else if (z == 11)
+				{
+					xman = 0;
+					yman = 1;
+				}
+				else if (z == 12)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 13)
+				{
+					xman = 14;
+					yman = 15;
+				}
+				else if (z == 14)
+				{
+					xman = 15;
+					yman = 8;
 				}
 				SetMap(z,xman,yman,100);
 			}
@@ -624,11 +704,11 @@ void move ()
 					SetMap(z,xman-1,yman,1);
 				}
 			}
-			else if (map[z][xman-1][yman] == 10)                                             //花钱商店
+			else if (map[z][xman-1][yman] == 10 || map[z][xman - 2][yman] == 10 ||map[z][xman - 3][yman] == 10)                                             //花钱商店
 			{
 				MoneyPurchase(z);
 			}
-			else if (map[z][xman-1][yman] == 11)                                             //经验商店
+			else if (map[z][xman-1][yman] == 11 || map[z][xman - 2][yman] == 11 ||map[z][xman - 3][yman] == 11)                                             //经验商店
 			{
 				ExperiencePurchase(z);
 			}
@@ -680,6 +760,26 @@ void move ()
 				{
 					xman = 16;
 					yman = 15;
+				}
+				else if (z == 11)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 12)
+				{
+					xman = 15;
+					yman = 0;
+				}
+				else if (z == 13)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 14)
+				{
+					xman = 1;
+					yman = 7;
 				}
 				if (z > zmax)
 					zmax = z;
@@ -738,6 +838,26 @@ void move ()
 				{
 					xman = 1;
 					yman = 0;
+				}
+				else if (z == 11)
+				{
+					xman = 0;
+					yman = 1;
+				}
+				else if (z == 12)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 13)
+				{
+					xman = 14;
+					yman = 15;
+				}
+				else if (z == 14)
+				{
+					xman = 15;
+					yman = 8;
 				}
 				SetMap(z,xman,yman,100);
 			}
@@ -858,11 +978,11 @@ void move ()
 					SetMap(z,xman+1,yman,1);
 				}
 			}
-			else if (map[z][xman+1][yman] == 10)                                             //花钱商店
+			else if (map[z][xman+1][yman] == 10 || map[z][xman + 2][yman] == 10 ||map[z][xman + 3][yman] == 10)                                           //花钱商店
 			{
 				MoneyPurchase(z);
 			}
-			else if (map[z][xman+1][yman] == 11)                                             //经验商店
+			else if (map[z][xman+1][yman] == 10 || map[z][xman + 2][yman] == 10 ||map[z][xman + 3][yman] == 10)                                           //经验商店
 			{
 				ExperiencePurchase(z);
 			}
@@ -914,6 +1034,26 @@ void move ()
 				{
 					xman = 16;
 					yman = 15;
+				}
+				else if (z == 11)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 12)
+				{
+					xman = 15;
+					yman = 0;
+				}
+				else if (z == 13)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 14)
+				{
+					xman = 1;
+					yman = 7;
 				}
 				if (z > zmax)
 					zmax = z;
@@ -972,6 +1112,26 @@ void move ()
 				{
 					xman = 1;
 					yman = 0;
+				}
+				else if (z == 11)
+				{
+					xman = 0;
+					yman = 1;
+				}
+				else if (z == 12)
+				{
+					xman = 16;
+					yman = 15;
+				}
+				else if (z == 13)
+				{
+					xman = 14;
+					yman = 15;
+				}
+				else if (z == 14)
+				{
+					xman = 15;
+					yman = 8;
 				}
 				SetMap(z,xman,yman,100);
 			}

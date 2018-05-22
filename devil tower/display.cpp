@@ -435,7 +435,7 @@ void display(int z)
 			}
 			else if(map[z][x][y] == 400)
 			{
-				putimage(156+x*32,y*32,&img2);
+				putimage(156+x*32,y*32,&img400);
 			}
 			else if(map[z][x][y] == 401)
 			{

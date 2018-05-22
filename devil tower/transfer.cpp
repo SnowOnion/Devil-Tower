@@ -119,6 +119,26 @@ void openTransfer()
 				xman = 16;
 				yman = 15;
 			}
+			else if (destination == 11)
+			{
+				xman = 16;
+				yman = 15;
+			}
+			else if (destination == 12)
+			{
+				xman = 15;
+				yman = 0;
+			}
+			else if (destination == 13)
+			{
+				xman = 16;
+				yman = 15;
+			}
+			else if (destination == 14)
+			{
+				xman = 1;
+				yman = 7;
+			}
 			z = destination;
 			SetMap(z,xman,yman,100);
 		}
@@ -175,6 +195,26 @@ void openTransfer()
 			{
 				xman = 1;
 				yman = 0;
+			}
+			else if (destination == 11)
+			{
+				xman = 0;
+				yman = 1;
+			}
+			else if (destination == 12)
+			{
+				xman = 16;
+				yman = 15;
+			}
+			else if (destination == 13)
+			{
+				xman = 14;
+				yman = 15;
+			}
+			else if (destination == 14)
+			{
+				xman = 15;
+				yman = 8;
 			}
 			z = destination;
 			SetMap(z,xman,yman,100);
