@@ -109,198 +109,247 @@ void openDictionary()
 	if (monsterArray[0] == 0)
 		exit = 1;
 	int ID = 0;
+	IMAGE 
+		img300,img301,img302,img303,
+		img310,img311,img312,
+		img320,img321,img322,
+		img330,img331,img332,
+		img340,img341,img342,
+		img350,img351,
+		img360,img361,img362,
+		img370,img371,
+		img380,img381,
+		img390,img391,
+		img392,img393,
+		img400,img401,img402,img403,
+		img410,img411,img412;
+	loadimage(&img300,_T("pictures\\300.jpg"),32,32);
+	loadimage(&img301,_T("pictures\\301.jpg"),32,32);
+	loadimage(&img302,_T("pictures\\302.jpg"),32,32);
+	loadimage(&img303,_T("pictures\\303.jpg"),32,32);
+	loadimage(&img310,_T("pictures\\310.jpg"),32,32);
+	loadimage(&img311,_T("pictures\\311.jpg"),32,32);
+	loadimage(&img312,_T("pictures\\312.jpg"),32,32);
+	loadimage(&img320,_T("pictures\\320.jpg"),32,32);
+	loadimage(&img321,_T("pictures\\321.jpg"),32,32);
+	loadimage(&img322,_T("pictures\\322.jpg"),32,32);
+	loadimage(&img330,_T("pictures\\330.jpg"),32,32);
+	loadimage(&img331,_T("pictures\\331.jpg"),32,32);
+	loadimage(&img332,_T("pictures\\332.jpg"),32,32);
+	loadimage(&img340,_T("pictures\\340.jpg"),32,32);
+	loadimage(&img341,_T("pictures\\341.jpg"),32,32);
+	loadimage(&img342,_T("pictures\\342.jpg"),32,32);
+	loadimage(&img350,_T("pictures\\350.jpg"),32,32);
+	loadimage(&img351,_T("pictures\\351.jpg"),32,32);
+	loadimage(&img360,_T("pictures\\360.jpg"),32,32);
+	loadimage(&img361,_T("pictures\\361.jpg"),32,32);
+	loadimage(&img362,_T("pictures\\362.jpg"),32,32);
+	loadimage(&img370,_T("pictures\\370.jpg"),32,32);
+	loadimage(&img371,_T("pictures\\371.jpg"),32,32);
+	loadimage(&img380,_T("pictures\\380.jpg"),32,32);
+	loadimage(&img381,_T("pictures\\381.jpg"),32,32);
+	loadimage(&img390,_T("pictures\\390.jpg"),32,32);
+	loadimage(&img391,_T("pictures\\391.jpg"),32,32);
+	loadimage(&img392,_T("pictures\\392.jpg"),32,32);
+	loadimage(&img393,_T("pictures\\393.jpg"),32,32);
+	loadimage(&img400,_T("pictures\\400.jpg"),32,32);
+	loadimage(&img401,_T("pictures\\401.jpg"),32,32);
+	loadimage(&img402,_T("pictures\\402.jpg"),32,32);
+	loadimage(&img403,_T("pictures\\403.jpg"),32,32);
+	loadimage(&img410,_T("pictures\\410.jpg"),32,32);
+	loadimage(&img411,_T("pictures\\411.jpg"),32,32);
+	loadimage(&img412,_T("pictures\\412.jpg"),32,32);
 	while (exit == 0)
 	{
 		for (n = 5 * page;(n <= 5 * page + 4)&&(monsterArray[n]!=0);n++)
 		{
 			ID = monsterArray[n];
-			IMAGE monster;
-			RECT namerect = {200,n * 100,350,100 + n * 100};
-			RECT healthrect = {340,n * 100,400,100 + n * 100};
-			RECT attackrect = {400,n * 100,460,100 + n * 100};
-			RECT defenserect = {460,n * 100,520,100 + n * 100};
-			RECT specialrect = {520,n * 100,620,100 + n * 100};
-			RECT estimaterect = {620,n * 100,700,100 + n * 100};
+			RECT namerect = {200,(n - page * 5) * 100,350,100 + (n - page * 5) * 100};
+			RECT healthrect = {340,(n - page * 5) * 100,400,100 + (n - page * 5) * 100};
+			RECT attackrect = {400,(n - page * 5) * 100,460,100 + (n - page * 5) * 100};
+			RECT defenserect = {460,(n - page * 5) * 100,520,100 + (n - page * 5) * 100};
+			RECT specialrect = {520,(n - page * 5) * 100,620,100 + (n - page * 5) * 100};
+			RECT estimaterect = {620,(n - page * 5) * 100,700,100 + (n - page * 5) * 100};
 			if (ID==300)
 			{
-				loadimage(&monster,_T("pictures\\300.jpg"),32,32);
 				drawtext(_T("Green Slime"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img300);
 			}
 			else if (ID==301)
 			{
-				loadimage(&monster,_T("pictures\\301.jpg"),32,32);
 				drawtext(_T("Red Slime"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img301);
 			}
 			else if (ID==302)
 			{
-				loadimage(&monster,_T("pictures\\302.jpg"),32,32);
 				drawtext(_T("Black Slime"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img302);
 			}
 			else if (ID==303)
 			{
-				loadimage(&monster,_T("pictures\\303.jpg"),32,32);
 				drawtext(_T("Slime King"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img303);
 			}
 			else if (ID==310)
 			{
-				loadimage(&monster,_T("pictures\\310.jpg"),32,32);
 				drawtext(_T("Small Bat"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img310);
 			}
 			else if (ID==311)
 			{
-				loadimage(&monster,_T("pictures\\311.jpg"),32,32);
 				drawtext(_T("Big Bat"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img311);
 			}
 			else if (ID==312)
 			{
-				loadimage(&monster,_T("pictures\\312.jpg"),32,32);
 				drawtext(_T("Red Bat"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img312);
 			}
 			else if (ID==320)
 			{
-				loadimage(&monster,_T("pictures\\320.jpg"),32,32);
 				drawtext(_T("Skeleton"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img320);
 			}
 			else if (ID==321)
 			{
-				loadimage(&monster,_T("pictures\\321.jpg"),32,32);
 				drawtext(_T("Armed Skeleton"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img321);
 			}
 			else if (ID==322)
 			{
-				loadimage(&monster,_T("pictures\\322.jpg"),32,32);
 				drawtext(_T("Captain Skeleton"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img322);
 			}
 			else if (ID==330)
 			{
-				loadimage(&monster,_T("pictures\\330.jpg"),32,32);
 				drawtext(_T("Blue Witch"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img330);
 			}
 			else if (ID==331)
 			{
-				loadimage(&monster,_T("pictures\\331.jpg"),32,32);
 				drawtext(_T("Yellow Witch"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img331);
 			}
 			else if (ID==332)
 			{
-				loadimage(&monster,_T("pictures\\332.jpg"),32,32);
 				drawtext(_T("Red Witch"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img332);
 			}
 			else if (ID==340)
 			{
-				loadimage(&monster,_T("pictures\\340.jpg"),32,32);
 				drawtext(_T("Yellow Guard"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img340);
 			}
 			else if (ID==341)
 			{
-				loadimage(&monster,_T("pictures\\341.jpg"),32,32);
 				drawtext(_T("Blue Guard"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img341);
 			}
 			else if (ID==342)
 			{
-				loadimage(&monster,_T("pictures\\342.jpg"),32,32);
 				drawtext(_T("Red Guard"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img342);
 			}
 			else if (ID==350)
 			{
-				loadimage(&monster,_T("pictures\\350.jpg"),32,32);
 				drawtext(_T("Orcish"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img350);
 			}
 			else if (ID==351)
 			{
-				loadimage(&monster,_T("pictures\\351.jpg"),32,32);
 				drawtext(_T("Armed Orcish"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img351);
 			}
 			else if (ID==360)
 			{
-				loadimage(&monster,_T("pictures\\360.jpg"),32,32);
 				drawtext(_T("Yellow Knight"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img360);
 			}
 			else if (ID==361)
 			{
-				loadimage(&monster,_T("pictures\\361.jpg"),32,32);
 				drawtext(_T("Red Knight"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img361);
 			}
 			else if (ID==362)
 			{
-				loadimage(&monster,_T("pictures\\362.jpg"),32,32);
 				drawtext(_T("Double Swords Knight"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img362);
 			}
 			else if (ID==370)
 			{
-				loadimage(&monster,_T("pictures\\370.jpg"),32,32);
 				drawtext(_T("Enchanter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img370);
 			}
 			else if (ID==371)
 			{
-				loadimage(&monster,_T("pictures\\371.jpg"),32,32);
 				drawtext(_T("Black Enchanter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img371);
 			}
 			else if (ID==380)
 			{
-				loadimage(&monster,_T("pictures\\380.jpg"),32,32);
 				drawtext(_T("Yellow Stone Fighter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img380);
 			}
 			else if (ID==381)
 			{
-				loadimage(&monster,_T("pictures\\381.jpg"),32,32);
 				drawtext(_T("Black Stone Fighter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img381);
 			}
 			else if (ID==390)
 			{
-				loadimage(&monster,_T("pictures\\390.jpg"),32,32);
 				drawtext(_T("Green Shadow"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img390);
 			}
 			else if (ID==391)
 			{
-				loadimage(&monster,_T("pictures\\391.jpg"),32,32);
 				drawtext(_T("Gray Shadow"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img391);
 			}
 			else if (ID==392)
 			{
-				loadimage(&monster,_T("pictures\\392.jpg"),32,32);
 				drawtext(_T("Green Shadow Fighter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img392);
 			}
 			else if (ID==393)
 			{
-				loadimage(&monster,_T("pictures\\393.jpg"),32,32);
 				drawtext(_T("Gray Shadow Fighter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img393);
 			}
 			else if (ID==400)
 			{
-				loadimage(&monster,_T("pictures\\401.jpg"),32,32);
 				drawtext(_T("Holy Warrior"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img400);
 			}
 			else if (ID==401)
 			{
-				loadimage(&monster,_T("pictures\\402.jpg"),32,32);
 				drawtext(_T("Yellow Holy Warrior"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img401);
 			}
 			else if (ID==402)
 			{
-				loadimage(&monster,_T("pictures\\403.jpg"),32,32);
 				drawtext(_T("Holy Swordsman"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img402);
 			}
 			else if (ID==403)
 			{
-				loadimage(&monster,_T("pictures\\410.jpg"),32,32);
 				drawtext(_T("Yellow Holy Swordsman"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img403);
 			}
 			else if (ID==410)
 			{
-				loadimage(&monster,_T("pictures\\410.jpg"),32,32);
 				drawtext(_T("Dragon Warrior"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img410);
 			}
 			else if (ID==411)
 			{
-				loadimage(&monster,_T("pictures\\411.jpg"),32,32);
 				drawtext(_T("Dragon Enchanter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img411);
 
 			}
 			else if (ID==412)
 			{
-				loadimage(&monster,_T("pictures\\412.jpg"),32,32);
 				drawtext(_T("Dragon King"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img412);
 			}
 			else
 			{
@@ -309,8 +358,6 @@ void openDictionary()
 
 			if (exit == 0)
 			{
-				putimage(156,34+n*100,&monster);
-
 				int monsterAttack = getMonsterAttack(ID);
 				int monsterDefense = getMonsterDefense(ID);
 				int monsterHealth = getMonsterHealth(ID);
@@ -367,17 +414,26 @@ void openDictionary()
 			drawtext(_T("Special"),&special,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 			drawtext(_T("Estimation"),&estimate,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 
-			MOUSEMSG m;
-			m = GetMouseMsg();
-			if (m.uMsg == WM_LBUTTONDOWN && m.x <= 300 && m.x >= 200 && m.y <= 544 && m.y >= 500 && page >= 1)
-				page -= 1;
-			if (m.uMsg == WM_LBUTTONDOWN && m.x <= 500 && m.x >= 400 && m.y <= 544 && m.y >= 500 && page <= (99-n0)/5)
-				page += 1;
-			if (m.uMsg == WM_LBUTTONDOWN && m.x <= 700 && m.x >= 600 && m.y <= 544 && m.y >= 500)
+			if (MouseHit())
 			{
-				exit = 1;
-				display(z);
-				break;
+				MOUSEMSG m;
+				m = GetMouseMsg();
+				if (m.uMsg == WM_LBUTTONDOWN && m.x <= 300 && m.x >= 200 && m.y <= 544 && m.y >= 500 && page >= 1)
+				{
+					page -= 1;
+					clearrectangle(156,0,700,544);
+				}
+				if (m.uMsg == WM_LBUTTONDOWN && m.x <= 500 && m.x >= 400 && m.y <= 544 && m.y >= 500 && page < (99-n0)/5)
+				{
+					page += 1;
+					clearrectangle(156,0,700,544);
+				}
+				if (m.uMsg == WM_LBUTTONDOWN && m.x <= 700 && m.x >= 600 && m.y <= 544 && m.y >= 500)
+				{
+					exit = 1;
+					display(z);
+					break;
+				}
 			}
 		}
 
