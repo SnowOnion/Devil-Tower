@@ -9,15 +9,15 @@
 #include "talk.h"
 
 int Health = 1000;                                  //血量
-int Attack = 100;                                    //攻击力
+int Attack = 10;                                    //攻击力
 int Defense = 10;                                   //防御力
 float Agility = 1.0;                                //敏捷度
 float DodgeProbability;
 bool HasTransfer = false;                           //有跳楼层神器
 bool HasDictionary = false;                         //有怪物宝典
-int YellowKey = 5;                                  //黄钥匙数目
-int BlueKey = 5;                                    //蓝钥匙数目
-int RedKey = 5;                                     //红钥匙数目
+int YellowKey = 0;                                  //黄钥匙数目
+int BlueKey = 0;                                    //蓝钥匙数目
+int RedKey = 0;                                     //红钥匙数目
 int yman=0;                                         //英雄的y坐标
 int xman=8;                                         //英雄的x坐标
 int z = 1;                                          //英雄所在的楼层数

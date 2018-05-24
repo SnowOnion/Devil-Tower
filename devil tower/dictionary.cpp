@@ -159,6 +159,24 @@ void openDictionary()
 	loadimage(&img410,_T("pictures\\410.jpg"),32,32);
 	loadimage(&img411,_T("pictures\\411.jpg"),32,32);
 	loadimage(&img412,_T("pictures\\412.jpg"),32,32);
+	RECT previousRect = {200,500,300,544};
+	RECT nextRect = {400,500,500,544};
+	RECT exitRect = {600,500,700,544};
+	drawtext(_T("Previous Page"),&previousRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	drawtext(_T("Next Page"),&nextRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	drawtext(_T("Exit"),&exitRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	RECT name = {200,0,350,50};
+	RECT health = {340,0,400,50};
+	RECT attack = {400,0,460,50};
+	RECT defense = {460,0,520,50};
+	RECT special = {520,0,620,50};
+	RECT estimate = {620,0,700,50};
+	drawtext(_T("Name"),&name,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	drawtext(_T("Health"),&health,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	drawtext(_T("Attack"),&attack,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	drawtext(_T("Defense"),&defense,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	drawtext(_T("Special"),&special,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	drawtext(_T("Estimation"),&estimate,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	while (exit == 0)
 	{
 		for (n = 5 * page;(n <= 5 * page + 4)&&(monsterArray[n]!=0);n++)
@@ -223,16 +241,19 @@ void openDictionary()
 			else if (ID==330)
 			{
 				drawtext(_T("Blue Witch"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Magic Damage"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img330);
 			}
 			else if (ID==331)
 			{
 				drawtext(_T("Yellow Witch"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Magic Damage"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img331);
 			}
 			else if (ID==332)
 			{
 				drawtext(_T("Red Witch"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Magic Damage"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img332);
 			}
 			else if (ID==340)
@@ -278,21 +299,25 @@ void openDictionary()
 			else if (ID==370)
 			{
 				drawtext(_T("Enchanter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Magic Damage"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img370);
 			}
 			else if (ID==371)
 			{
 				drawtext(_T("Black Enchanter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Magic Damage"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img371);
 			}
 			else if (ID==380)
 			{
 				drawtext(_T("Yellow Stone Fighter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Tough"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img380);
 			}
 			else if (ID==381)
 			{
 				drawtext(_T("Black Stone Fighter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Tough"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img381);
 			}
 			else if (ID==390)
@@ -395,46 +420,24 @@ void openDictionary()
 					drawtext(_T("???"),&estimaterect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				}
 			}
-			RECT previousRect = {200,500,300,544};
-			RECT nextRect = {400,500,500,544};
-			RECT exitRect = {600,500,700,544};
-			drawtext(_T("Previous Page"),&previousRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			drawtext(_T("Next Page"),&nextRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			drawtext(_T("Exit"),&exitRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			RECT name = {200,0,350,50};
-			RECT health = {340,0,400,50};
-			RECT attack = {400,0,460,50};
-			RECT defense = {460,0,520,50};
-			RECT special = {520,0,620,50};
-			RECT estimate = {620,0,700,50};
-			drawtext(_T("Name"),&name,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			drawtext(_T("Health"),&health,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			drawtext(_T("Attack"),&attack,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			drawtext(_T("Defense"),&defense,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			drawtext(_T("Special"),&special,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			drawtext(_T("Estimation"),&estimate,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-
-			if (MouseHit())
-			{
-				MOUSEMSG m;
-				m = GetMouseMsg();
-				if (m.uMsg == WM_LBUTTONDOWN && m.x <= 300 && m.x >= 200 && m.y <= 544 && m.y >= 500 && page >= 1)
-				{
-					page -= 1;
-					clearrectangle(156,0,700,544);
-				}
-				if (m.uMsg == WM_LBUTTONDOWN && m.x <= 500 && m.x >= 400 && m.y <= 544 && m.y >= 500 && page < (99-n0)/5)
-				{
-					page += 1;
-					clearrectangle(156,0,700,544);
-				}
-				if (m.uMsg == WM_LBUTTONDOWN && m.x <= 700 && m.x >= 600 && m.y <= 544 && m.y >= 500)
-				{
-					exit = 1;
-					display(z);
-					break;
-				}
-			}
+		}
+		MOUSEMSG m;
+		m = GetMouseMsg();
+		if (m.uMsg == WM_LBUTTONDOWN && m.x <= 300 && m.x >= 200 && m.y <= 544 && m.y >= 500 && page >= 1)
+		{
+			page -= 1;
+			clearrectangle(156,30,700,500);
+		}
+		if (m.uMsg == WM_LBUTTONDOWN && m.x <= 500 && m.x >= 400 && m.y <= 544 && m.y >= 500 && page < (99-n0)/5)
+		{
+			page += 1;
+			clearrectangle(156,30,700,500);
+		}
+		if (m.uMsg == WM_LBUTTONDOWN && m.x <= 700 && m.x >= 600 && m.y <= 544 && m.y >= 500)
+		{
+			exit = 1;
+			display(z);
+			break;
 		}
 
 	}

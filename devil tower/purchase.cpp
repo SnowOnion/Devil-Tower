@@ -53,7 +53,7 @@ void MoneyPurchase(int z)
 				}
 				if(m.x>=156&&m.x<=700&&m.y>=300&&m.y<=350&&Money>=25)
 				{
-					AddHealth(1000);
+					AddHealth(500);
 					AddMoney(-25);
 				}
 				if(m.x>=156&&m.x<=700&&m.y>400&&m.y<=500)
@@ -184,6 +184,7 @@ void ExperiencePurchase(int z)
 					AddAttack(8);
 					AddDefense(8);
 					AddHealth(800);
+					Level += 1;
 					AddExperience(-100);
 				}
 				if(m.x>=156&&m.x<=700&&m.y>=400&&m.y<=500)

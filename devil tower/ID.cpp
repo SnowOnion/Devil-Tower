@@ -100,47 +100,48 @@
 412  DRAGON KING         龙王 
 */
 
+extern int Attack;
+extern int Defense;
 #include "ID.h"
+#include <string.h>
 int getMonsterAttack(int ID)
 {
-		if (ID == 300)
-		return 11;
+	if (ID == 300)
+		return 17;
 	else if (ID == 301)
-		return 0;
-	else if (ID == 301)
-		return 0;
+		return 22;
 	else if (ID == 302)
-		return 0;
+		return 30;
 	else if (ID == 303)
-		return 0;
+		return 100;
 	else if (ID == 310)		
-		return 0;
+		return 50;
 	else if (ID == 311)
-		return 0;
+		return 75;
 	else if (ID == 312)
-		return 0;
+		return 150;
 	else if (ID == 320)
-		return 0;
+		return 40;
 	else if (ID == 321)
-		return 0;
+		return 80;
 	else if (ID == 322)
-		return 0;
+		return 120;
 	else if (ID == 330)
-		return 0;
+		return Defense + 15;
 	else if (ID == 331)
-		return 0;
+		return Defense + 30;
 	else if (ID == 332)
-		return 0;
+		return Defense + 50;
 	else if (ID == 340)
-		return 0;
+		return 90;
 	else if (ID == 341)
-		return 0;
+		return 180;
 	else if (ID == 342)
-		return 0;
+		return 250;
 	else if (ID == 350)
-		return 0;
+		return 120;
 	else if (ID == 351)
-		return 0;
+		return 200;
 	else if (ID == 360)
 		return 0;
 	else if (ID == 361)
@@ -148,29 +149,29 @@ int getMonsterAttack(int ID)
 	else if (ID == 362)
 		return 0;
 	else if (ID == 370)
-		return 0;
+		return Defense + 80;
 	else if (ID == 371)
-		return 0;
+		return Defense + 100;
 	else if (ID == 380)
-		return 0;
+		return 400;
 	else if (ID == 381)
-		return 0;
+		return 550;
 	else if (ID == 390)
-		return 0;
+		return 400;
 	else if (ID == 391)
-		return 0;
+		return 500;
 	else if (ID == 392)
-		return 0;
+		return 600;
 	else if (ID == 393)
-		return 0;
+		return 700;
 	else if (ID == 400)
-		return 0;
+		return 150;
 	else if (ID == 401)
-		return 0;
+		return 300;
 	else if (ID == 402)
-		return 0;
+		return 600;
 	else if (ID == 403)
-		return 0;
+		return 1000;
 	else if (ID == 410)
 		return 0;
 	else if (ID == 411)
@@ -182,15 +183,13 @@ int getMonsterAttack(int ID)
 int getMonsterDefense(int ID)
 {
 	if (ID == 300)
-		return 9;
+		return 5;
 	else if (ID == 301)
-		return 0;
-	else if (ID == 301)
-		return 0;
+		return 5;
 	else if (ID == 302)
-		return 0;
+		return 10;
 	else if (ID == 303)
-		return 0;
+		return 100;
 	else if (ID == 310)		
 		return 0;
 	else if (ID == 311)
@@ -198,27 +197,27 @@ int getMonsterDefense(int ID)
 	else if (ID == 312)
 		return 0;
 	else if (ID == 320)
-		return 0;
+		return 20;
 	else if (ID == 321)
-		return 0;
+		return 35;
 	else if (ID == 322)
-		return 0;
+		return 50;
 	else if (ID == 330)
-		return 0;
+		return 10;
 	else if (ID == 331)
-		return 0;
+		return 20;
 	else if (ID == 332)
-		return 0;
+		return 40;
 	else if (ID == 340)
-		return 0;
+		return 40;
 	else if (ID == 341)
-		return 0;
+		return 100;
 	else if (ID == 342)
-		return 0;
+		return 150;
 	else if (ID == 350)
-		return 0;
+		return 10;
 	else if (ID == 351)
-		return 0;
+		return 50;
 	else if (ID == 360)
 		return 0;
 	else if (ID == 361)
@@ -226,29 +225,29 @@ int getMonsterDefense(int ID)
 	else if (ID == 362)
 		return 0;
 	else if (ID == 370)
-		return 0;
+		return 50;
 	else if (ID == 371)
-		return 0;
+		return 80;
 	else if (ID == 380)
-		return 0;
+		return Attack-5;
 	else if (ID == 381)
-		return 0;
+		return Attack-1;
 	else if (ID == 390)
-		return 0;
+		return 300;
 	else if (ID == 391)
-		return 0;
+		return 400;
 	else if (ID == 392)
-		return 0;
+		return 500;
 	else if (ID == 393)
-		return 0;
+		return 600;
 	else if (ID == 400)
-		return 0;
+		return 50;
 	else if (ID == 401)
-		return 0;
+		return 100;
 	else if (ID == 402)
-		return 0;
+		return 200;
 	else if (ID == 403)
-		return 0;
+		return 400;
 	else if (ID == 410)
 		return 0;
 	else if (ID == 411)
@@ -260,43 +259,41 @@ int getMonsterDefense(int ID)
 int getMonsterHealth(int ID)
 {
 		if (ID == 300)
-		return 100;
+		return 50;
 	else if (ID == 301)
-		return 0;
-	else if (ID == 301)
-		return 0;
+		return 80;
 	else if (ID == 302)
-		return 0;
+		return 100;
 	else if (ID == 303)
-		return 0;
+		return 500;
 	else if (ID == 310)		
-		return 0;
+		return 200;
 	else if (ID == 311)
-		return 0;
+		return 400;
 	else if (ID == 312)
-		return 0;
+		return 1200;
 	else if (ID == 320)
-		return 0;
+		return 125;
 	else if (ID == 321)
-		return 0;
+		return 250;
 	else if (ID == 322)
-		return 0;
+		return 500;
 	else if (ID == 330)
-		return 0;
+		return 100;
 	else if (ID == 331)
-		return 0;
+		return 200;
 	else if (ID == 332)
-		return 0;
+		return 400;
 	else if (ID == 340)
-		return 0;
+		return 500;
 	else if (ID == 341)
-		return 0;
+		return 1000;
 	else if (ID == 342)
-		return 0;
+		return 1500;
 	else if (ID == 350)
-		return 0;
+		return 1000;
 	else if (ID == 351)
-		return 0;
+		return 2000;
 	else if (ID == 360)
 		return 0;
 	else if (ID == 361)
@@ -304,29 +301,29 @@ int getMonsterHealth(int ID)
 	else if (ID == 362)
 		return 0;
 	else if (ID == 370)
-		return 0;
+		return 800;
 	else if (ID == 371)
-		return 0;
+		return 1000;
 	else if (ID == 380)
-		return 0;
+		return 100;
 	else if (ID == 381)
-		return 0;
+		return 120;
 	else if (ID == 390)
-		return 0;
+		return 500;
 	else if (ID == 391)
-		return 0;
+		return 800;
 	else if (ID == 392)
-		return 0;
+		return 1000;
 	else if (ID == 393)
-		return 0;
+		return 1500;
 	else if (ID == 400)
-		return 0;
+		return 1000;
 	else if (ID == 401)
-		return 0;
+		return 2000;
 	else if (ID == 402)
-		return 0;
+		return 3000;
 	else if (ID == 403)
-		return 0;
+		return 4000;
 	else if (ID == 410)
 		return 0;
 	else if (ID == 411)
@@ -340,41 +337,39 @@ int getMoney(int ID)
 	if (ID == 300)
 		return 1;
 	else if (ID == 301)
-		return 0;
-	else if (ID == 301)
-		return 0;
+		return 2;
 	else if (ID == 302)
-		return 0;
+		return 3;
 	else if (ID == 303)
-		return 0;
+		return 20;
 	else if (ID == 310)		
-		return 0;
+		return 5;
 	else if (ID == 311)
-		return 0;
+		return 10;
 	else if (ID == 312)
-		return 0;
+		return 20;
 	else if (ID == 320)
-		return 0;
+		return 5;
 	else if (ID == 321)
-		return 0;
+		return 10;
 	else if (ID == 322)
-		return 0;
+		return 20;
 	else if (ID == 330)
-		return 0;
+		return 5;
 	else if (ID == 331)
-		return 0;
+		return 8;
 	else if (ID == 332)
-		return 0;
+		return 15;
 	else if (ID == 340)
-		return 0;
+		return 10;
 	else if (ID == 341)
-		return 0;
+		return 30;
 	else if (ID == 342)
-		return 0;
+		return 50;
 	else if (ID == 350)
-		return 0;
+		return 20;
 	else if (ID == 351)
-		return 0;
+		return 40;
 	else if (ID == 360)
 		return 0;
 	else if (ID == 361)
@@ -382,29 +377,29 @@ int getMoney(int ID)
 	else if (ID == 362)
 		return 0;
 	else if (ID == 370)
-		return 0;
+		return 30;
 	else if (ID == 371)
-		return 0;
+		return 40;
 	else if (ID == 380)
-		return 0;
+		return 50;
 	else if (ID == 381)
-		return 0;
+		return 80;
 	else if (ID == 390)
-		return 0;
+		return 65;
 	else if (ID == 391)
-		return 0;
+		return 80;
 	else if (ID == 392)
-		return 0;
+		return 100;
 	else if (ID == 393)
-		return 0;
+		return 120;
 	else if (ID == 400)
-		return 0;
+		return 30;
 	else if (ID == 401)
-		return 0;
+		return 45;
 	else if (ID == 402)
-		return 0;
+		return 70;
 	else if (ID == 403)
-		return 0;
+		return 100;
 	else if (ID == 410)
 		return 0;
 	else if (ID == 411)
@@ -418,41 +413,39 @@ int getExperience(int ID)
 		if (ID == 300)
 		return 1;
 	else if (ID == 301)
-		return 0;
-	else if (ID == 301)
-		return 0;
+		return 1;
 	else if (ID == 302)
-		return 0;
+		return 2;
 	else if (ID == 303)
-		return 0;
+		return 10;
 	else if (ID == 310)		
-		return 0;
+		return 4;
 	else if (ID == 311)
-		return 0;
+		return 5;
 	else if (ID == 312)
-		return 0;
+		return 10;
 	else if (ID == 320)
-		return 0;
+		return 4;
 	else if (ID == 321)
-		return 0;
+		return 8;
 	else if (ID == 322)
-		return 0;
+		return 15;
 	else if (ID == 330)
-		return 0;
+		return 4;
 	else if (ID == 331)
-		return 0;
+		return 5;
 	else if (ID == 332)
-		return 0;
+		return 8;
 	else if (ID == 340)
-		return 0;
+		return 8;
 	else if (ID == 341)
-		return 0;
+		return 15;
 	else if (ID == 342)
-		return 0;
+		return 25;
 	else if (ID == 350)
-		return 0;
+		return 15;
 	else if (ID == 351)
-		return 0;
+		return 25;
 	else if (ID == 360)
 		return 0;
 	else if (ID == 361)
@@ -460,29 +453,29 @@ int getExperience(int ID)
 	else if (ID == 362)
 		return 0;
 	else if (ID == 370)
-		return 0;
+		return 15;
 	else if (ID == 371)
-		return 0;
+		return 25;
 	else if (ID == 380)
-		return 0;
+		return 35;
 	else if (ID == 381)
-		return 0;
+		return 50;
 	else if (ID == 390)
-		return 0;
+		return 35;
 	else if (ID == 391)
-		return 0;
+		return 45;
 	else if (ID == 392)
-		return 0;
+		return 55;
 	else if (ID == 393)
-		return 0;
+		return 70;
 	else if (ID == 400)
-		return 0;
+		return 20;
 	else if (ID == 401)
-		return 0;
+		return 35;
 	else if (ID == 402)
-		return 0;
+		return 50;
 	else if (ID == 403)
-		return 0;
+		return 70;
 	else if (ID == 410)
 		return 0;
 	else if (ID == 411)

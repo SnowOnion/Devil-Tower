@@ -3,12 +3,16 @@
 #include <conio.h>
 #include "string.h"
 #include <tchar.h>
+#include <math.h>
 #include "man.h"
 #include "ID.h"
+#include <ctime>
 extern int Attack;
 extern int Defense;
 extern int Health;
 extern int z;
+extern float Agility;
+extern float DodgeProbability;
 
 void fight (int ID)
 {
@@ -20,6 +24,8 @@ void fight (int ID)
 	RECT monsterrect = {560,200,700,250};
 	RECT herohealthrect = {210,250,230,250};
 	RECT monsterhealthrect = {560,250,580,250};
+	RECT heroDodgeRect = {190,350,270,400};
+	RECT monsterDodgeRect = {540,350,700,400};
 
 	IMAGE hero,monster;
 	loadimage(&hero,_T("pictures\\100.jpg"),64,64);
@@ -30,7 +36,7 @@ void fight (int ID)
 	}
 	else if (ID==301)
 	{
-		loadimage(&monster,_T("pcitures\\301.jpg"),64,64);
+		loadimage(&monster,_T("pictures\\301.jpg"),64,64);
 		drawtext(_T("Red Slime"),&monsterrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	}
 	else if (ID==302)
@@ -171,22 +177,22 @@ void fight (int ID)
 
 	else if (ID==400)
 	{
-		loadimage(&monster,_T("pictures\\401.jpg"),64,64);
+		loadimage(&monster,_T("pictures\\400.jpg"),64,64);
 		drawtext(_T("Holy Warrior"),&monsterrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	}
 	else if (ID==401)
 	{
-		loadimage(&monster,_T("pictures\\402.jpg"),64,64);
+		loadimage(&monster,_T("pictures\\401.jpg"),64,64);
 		drawtext(_T("Yellow Holy Warrior"),&monsterrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	}
 	else if (ID==402)
 	{
-		loadimage(&monster,_T("pictures\\403.jpg"),64,64);
+		loadimage(&monster,_T("pictures\\402.jpg"),64,64);
 		drawtext(_T("Holy Swordsman"),&monsterrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	}
 	else if (ID==403)
 	{
-		loadimage(&monster,_T("pictures\\410.jpg"),64,64);
+		loadimage(&monster,_T("pictures\\403.jpg"),64,64);
 		drawtext(_T("Yellow Holy Swordsman"),&monsterrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	}
 	else if (ID==410)
@@ -240,6 +246,9 @@ void fight (int ID)
 	outtextxy(650,310,strmonsterdefense);
 
 	settextcolor(WHITE);
+	DodgeProbability = 10 * sqrt(Agility);
+	float monsterDodgeProbability = 0.0;
+	bool Dodge = false;
 	int i = 0;
 	while (monsterhealth > 0&& Health > 0)
 	{
@@ -251,8 +260,18 @@ void fight (int ID)
 			_stprintf(strmonsterhealth,TEXT("%d"),monsterhealth);
 			outtextxy(650,250,strmonsterhealth);
 			i++;
-			if (Attack - monsterdefense >= 0)
+			srand((unsigned)time(NULL));
+			if (rand()/double(RAND_MAX) <= monsterDodgeProbability/100 && rand()/double(RAND_MAX) >= 0)
+				Dodge = true;
+			if (Attack - monsterdefense >= 0 && !Dodge)
 				monsterhealth = monsterhealth - (Attack - monsterdefense);
+			if (Dodge)
+			{
+				drawtext(_T("Monster Dodged Attack!"),&monsterDodgeRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				Sleep(50);
+				clearrectangle(540,280,700,320);
+				Dodge = false;
+			}
 		}
 		else 
 		{
@@ -261,8 +280,18 @@ void fight (int ID)
 			_stprintf(strhealth,TEXT("%d"),Health);
 			outtextxy(250,250,strhealth);
 			i++;
-			if (monsterattack - Defense >= 0)
+			srand((unsigned)time(NULL));
+			if (rand()/double(RAND_MAX) <= DodgeProbability/100 && rand()/double(RAND_MAX) >= 0)
+				Dodge = true;
+			if (monsterattack - Defense >= 0 && !Dodge)
 				Health = Health - (monsterattack - Defense);
+			if (Dodge)
+			{
+				drawtext(_T("Hero Dodged Attack!"),&heroDodgeRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				Sleep(50);
+				clearrectangle(210,280,250,320);
+				Dodge = false;
+			}
 		}
 		if (monsterhealth <= 0)
 		{
@@ -275,6 +304,15 @@ void fight (int ID)
 			int experiecneincrement = getExperience(ID);
 			AddMoney(moneyincrement);
 			AddExperience(experiecneincrement);
+		}
+		if (Health <= 0)
+		{
+			Health = 0;
+			Sleep(500);
+			clearrectangle(0,0,700,544);
+			RECT dieRect = {0,0,700,544};
+			drawtext(_T("You Died!"),&dieRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+			Sleep(100000);
 		}
 	}
 }
