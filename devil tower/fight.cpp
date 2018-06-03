@@ -1,6 +1,7 @@
 ﻿#include <stdio.h>
 #include <graphics.h>
 #include <conio.h>
+#include <stdlib.h>
 #include "string.h"
 #include <tchar.h>
 #include <math.h>
@@ -24,8 +25,8 @@ void fight (int ID)
 	RECT monsterrect = {560,200,700,250};
 	RECT herohealthrect = {210,250,230,250};
 	RECT monsterhealthrect = {560,250,580,250};
-	RECT heroDodgeRect = {190,350,270,400};
-	RECT monsterDodgeRect = {540,350,700,400};
+	RECT heroDodgeRect = {150,350,310,400};
+	RECT monsterDodgeRect = {500,350,700,400};
 
 	IMAGE hero,monster;
 	loadimage(&hero,_T("pictures\\100.jpg"),64,64);
@@ -210,6 +211,16 @@ void fight (int ID)
 		loadimage(&monster,_T("pictures\\412.jpg"),64,64);
 		drawtext(_T("Dragon King"),&monsterrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	}
+	else if (ID==108)
+	{
+		loadimage(&monster,_T("pictures\\108.jpg"),64,64);
+		drawtext(_T("YYJ"),&monsterrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	}
+	else if (ID==109)
+	{
+		loadimage(&monster,_T("pictures\\109.jpg"),64,64);
+		drawtext(_T("LZH"),&monsterrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+	}
 
 	putimage(200, 150, &hero);
 	putimage(600, 150, &monster);
@@ -246,10 +257,13 @@ void fight (int ID)
 	outtextxy(650,310,strmonsterdefense);
 
 	settextcolor(WHITE);
-	DodgeProbability = 10 * sqrt(Agility);
+	DodgeProbability = 4 * sqrt(Agility);
 	float monsterDodgeProbability = 0.0;
+	if (ID<=393&&ID>=390)
+		monsterDodgeProbability = 25.0;
 	bool Dodge = false;
 	int i = 0;
+	double random = 0;
 	while (monsterhealth > 0&& Health > 0)
 	{
 		Sleep(50);
@@ -260,16 +274,16 @@ void fight (int ID)
 			_stprintf(strmonsterhealth,TEXT("%d"),monsterhealth);
 			outtextxy(650,250,strmonsterhealth);
 			i++;
-			srand((unsigned)time(NULL));
-			if (rand()/double(RAND_MAX) <= monsterDodgeProbability/100 && rand()/double(RAND_MAX) >= 0)
+			random = rand()/(double)RAND_MAX;
+			if (random <= monsterDodgeProbability/100.0 && random >= 0)
 				Dodge = true;
 			if (Attack - monsterdefense >= 0 && !Dodge)
 				monsterhealth = monsterhealth - (Attack - monsterdefense);
 			if (Dodge)
 			{
 				drawtext(_T("Monster Dodged Attack!"),&monsterDodgeRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-				Sleep(50);
-				clearrectangle(540,280,700,320);
+				Sleep(200);
+				clearrectangle(500,350,700,400);
 				Dodge = false;
 			}
 		}
@@ -280,16 +294,16 @@ void fight (int ID)
 			_stprintf(strhealth,TEXT("%d"),Health);
 			outtextxy(250,250,strhealth);
 			i++;
-			srand((unsigned)time(NULL));
-			if (rand()/double(RAND_MAX) <= DodgeProbability/100 && rand()/double(RAND_MAX) >= 0)
+			random = rand()/(double)RAND_MAX;
+			if (random <= DodgeProbability/100.0 && random >= 0)
 				Dodge = true;
 			if (monsterattack - Defense >= 0 && !Dodge)
 				Health = Health - (monsterattack - Defense);
 			if (Dodge)
 			{
 				drawtext(_T("Hero Dodged Attack!"),&heroDodgeRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-				Sleep(50);
-				clearrectangle(210,280,250,320);
+				Sleep(200);
+				clearrectangle(150,350,310,400);
 				Dodge = false;
 			}
 		}
@@ -304,6 +318,35 @@ void fight (int ID)
 			int experiecneincrement = getExperience(ID);
 			AddMoney(moneyincrement);
 			AddExperience(experiecneincrement);
+			if (ID == 108)
+			{
+				TCHAR str[]=_T("NO!!!!!");
+				outtextxy(10,400,str);
+				Sleep(1000);
+				clearrectangle(0,400,156,425);
+				TCHAR str1[]=_T("她只是纸片人啊");
+				outtextxy(10,400,str1);
+				Sleep(1000);
+				SetMap(3,15,13,1);
+				display(z);
+			}
+			if (ID == 109)
+			{
+				TCHAR str[]=_T("哈哈哈，你以为我死了");
+				outtextxy(10,400,str);
+				Sleep(1000);
+				clearrectangle(0,400,200,425);
+				TCHAR str1[]=_T("太天真了");
+				outtextxy(10,400,str1);
+				Sleep(1000);
+				clearrectangle(0,400,200,425);
+				TCHAR str2[]=_T("被你说对了");
+				outtextxy(10,400,str2);
+				Sleep(1000);
+				SetMap(3,14,13,1);
+				display(z);
+			}
+			
 		}
 		if (Health <= 0)
 		{

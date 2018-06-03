@@ -121,7 +121,8 @@ void display(int z)
 		img390,img391,
 		img392,img393,
 		img400,img401,img402,img403,
-		img410,img411,img412;
+		img410,img411,img412,
+		img107;
 	loadimage(&img0,_T("pictures\\0.jpg"),32,32);
 	loadimage(&img1,_T("pictures\\1.jpg"),32,32);
 	loadimage(&img2,_T("pictures\\2.jpg"),32,32);
@@ -189,6 +190,7 @@ void display(int z)
 	loadimage(&img410,_T("pictures\\410.jpg"),32,32);
 	loadimage(&img411,_T("pictures\\411.jpg"),32,32);
 	loadimage(&img412,_T("pictures\\412.jpg"),32,32);
+	loadimage(&img107,_T("pictures\\107.jpg"),32,32);
 	for (x = 0;x <= 16; x++)
 	{
 		for (y = 0;y <= 16;y++)
@@ -460,6 +462,14 @@ void display(int z)
 			else if(map[z][x][y] == 412)
 			{
 				putimage(156+x*32,y*32,&img412);
+			}
+			else if(map[z][x][y] == 108)
+			{
+				putimage(156+x*32,y*32,&img107);
+			}
+			else if(map[z][x][y] == 109)
+			{
+				putimage(156+x*32,y*32,&img107);
 			}
 		}
 	}

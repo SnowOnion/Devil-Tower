@@ -71,7 +71,7 @@ void openDictionary()
 					break;
 				}
 			}
-			if (same == 0 && map[z][i][j] <= 500 && map[z][i][j] >= 300)
+			if (same == 0 && (map[z][i][j] <= 500 && map[z][i][j] >= 300 || map[z][i][j] == 109 || map[z][i][j] == 108))
 			{
 				monsterArray[n] = map[z][i][j];
 				n++;
@@ -122,7 +122,8 @@ void openDictionary()
 		img390,img391,
 		img392,img393,
 		img400,img401,img402,img403,
-		img410,img411,img412;
+		img410,img411,img412,
+		img108,img109;
 	loadimage(&img300,_T("pictures\\300.jpg"),32,32);
 	loadimage(&img301,_T("pictures\\301.jpg"),32,32);
 	loadimage(&img302,_T("pictures\\302.jpg"),32,32);
@@ -159,6 +160,8 @@ void openDictionary()
 	loadimage(&img410,_T("pictures\\410.jpg"),32,32);
 	loadimage(&img411,_T("pictures\\411.jpg"),32,32);
 	loadimage(&img412,_T("pictures\\412.jpg"),32,32);
+	loadimage(&img108,_T("pictures\\108.jpg"),32,32);
+	loadimage(&img109,_T("pictures\\109.jpg"),32,32);
 	RECT previousRect = {200,500,300,544};
 	RECT nextRect = {400,500,500,544};
 	RECT exitRect = {600,500,700,544};
@@ -323,21 +326,25 @@ void openDictionary()
 			else if (ID==390)
 			{
 				drawtext(_T("Green Shadow"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Agile"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img390);
 			}
 			else if (ID==391)
 			{
 				drawtext(_T("Gray Shadow"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Agile"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img391);
 			}
 			else if (ID==392)
 			{
 				drawtext(_T("Green Shadow Fighter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Agile"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img392);
 			}
 			else if (ID==393)
 			{
 				drawtext(_T("Gray Shadow Fighter"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				drawtext(_T("Agile"),&specialrect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img393);
 			}
 			else if (ID==400)
@@ -375,6 +382,17 @@ void openDictionary()
 			{
 				drawtext(_T("Dragon King"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 				putimage(156,34+(n - page * 5) * 100,&img412);
+			}
+			else if (ID==108)
+			{
+				drawtext(_T("YYJ"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img108);
+
+			}
+			else if (ID==109)
+			{
+				drawtext(_T("LZH"),&namerect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+				putimage(156,34+(n - page * 5) * 100,&img109);
 			}
 			else
 			{
@@ -441,7 +459,4 @@ void openDictionary()
 		}
 
 	}
-
-
-
 }

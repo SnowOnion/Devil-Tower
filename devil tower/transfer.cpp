@@ -16,7 +16,7 @@ void openTransfer()
 	int arrow = 0;
 	int i = 1;
 	TCHAR phrase[] = _T("Go to      floor");
-	TCHAR number[2];
+	TCHAR number[10];
 	RECT exit = {400,0,500,100};
 	drawtext(_T("exit"),&exit,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	for (i = 1;i <= zmax;i++)
@@ -136,7 +136,7 @@ void openTransfer()
 			}
 			else if (destination == 14)
 			{
-				xman = 1;
+				xman = 15;
 				yman = 7;
 			}
 			z = destination;
@@ -214,7 +214,7 @@ void openTransfer()
 			else if (destination == 14)
 			{
 				xman = 15;
-				yman = 8;
+				yman = 7;
 			}
 			z = destination;
 			SetMap(z,xman,yman,100);

@@ -12,7 +12,7 @@ int Health = 1000;                                  //血量
 int Attack = 10;                                    //攻击力
 int Defense = 10;                                   //防御力
 float Agility = 1.0;                                //敏捷度
-float DodgeProbability;
+float DodgeProbability = 4.0;
 bool HasTransfer = false;                           //有跳楼层神器
 bool HasDictionary = false;                         //有怪物宝典
 int YellowKey = 0;                                  //黄钥匙数目
@@ -45,7 +45,7 @@ void AddHealth (int Increment)
 void AddAgility (int Increment)
 {
 	Agility += Increment;
-	DodgeProbability = 10 * sqrt(Agility);
+	DodgeProbability = 4 * sqrt(Agility);
 }
 
 void AddMoney (int Increment)
@@ -79,6 +79,13 @@ void move ()
 				yman += 1;
 				SetMap(z,xman,yman,100);
 				SetMap(z,xman,yman-1,1);
+			}
+			else if (map[z][xman][yman+1] == 5)                                       //前方是魔法门
+			{
+				if (map[10][16][10] == 1)
+				{
+					map[z][xman][yman+1] = 1;
+				}
 			}
 			else if ((map[z][xman][yman+1] >= 300)&&(map[z][xman][yman+1] <= 500))        //前方是怪物
 			{
@@ -184,15 +191,20 @@ void move ()
 					xman = 8;
 					yman = 7;
 				}
+				else if (z == 6 && xman == 0 && yman+1 == 16)
+				{
+					xman = 1;
+					yman = 16;
+				}
+				else if (z == 6  && xman == 16 && yman+1 == 8)
+				{
+					xman = 15;
+					yman = 8;
+				}
 				else if (z == 5)
 				{
 					xman = 0;
 					yman = 1;
-				}
-				else if (z == 6)
-				{
-					xman = 1;
-					yman = 16;
 				}
 				else if (z == 7)
 				{
@@ -231,7 +243,7 @@ void move ()
 				}
 				else if (z == 14)
 				{
-					xman = 1;
+					xman = 15;
 					yman = 7;
 				}
 				SetMap(z,xman,yman,100);
@@ -262,15 +274,20 @@ void move ()
 					xman = 16;
 					yman = 15;
 				}
-				else if (z == 5)
-				{
-					xman = 0;
-					yman = 15;
-				}
 				else if (z == 6)
 				{
 					xman = 9;
 					yman = 1;
+				}
+				else if (z == 5 && xman == 0 && yman+1 == 16)
+				{
+					xman = 0;
+					yman = 15;
+				}
+				else if (z == 5 && xman == 16 && yman+1 == 8)
+				{
+					xman = 15;
+					yman = 0;
 				}
 				else if (z == 7)
 				{
@@ -307,11 +324,6 @@ void move ()
 					xman = 14;
 					yman = 15;
 				}
-				else if (z == 14)
-				{
-					xman = 15;
-					yman = 8;
-				}
 				SetMap(z,xman,yman,100);
 			}
 			else if (map[z][xman][yman+1] == 104)                                            //与白发老人讲话
@@ -326,9 +338,13 @@ void move ()
 			{
 				TalkPrincess(z);
 			}
-			else if (map[z][xman][yman+1] == 107)                                            //与Boss谈话
+			else if (map[z][xman][yman+1] == 108)                                            //与YYJ谈话
 			{
-				TalkBoss(z);
+				TalkBoss(1);
+			}
+			else if (map[z][xman][yman+1] == 109)                                            //与LZH谈话
+			{
+				TalkBoss(2);
 			}
 			else
 			{
@@ -352,6 +368,13 @@ void move ()
 				yman -= 1;
 				SetMap(z,xman,yman,101);
 				SetMap(z,xman,yman+1,1);
+			}
+			else if (map[z][xman][yman-1] == 5)                                       //前方是魔法门
+			{
+				if (map[10][16][10] == 1)
+				{
+					map[z][xman][yman-1] = 1;
+				}
 			}
 			else if ((map[z][xman][yman-1] >= 300)&&(map[z][xman][yman-1] <= 500))        //前方是怪物
 			{
@@ -457,15 +480,20 @@ void move ()
 					xman = 8;
 					yman = 7;
 				}
-				else if (z == 5)
+				else if (z == 6)
 				{
 					xman = 0;
-					yman = 1;
+					yman = 15;
 				}
-				else if (z == 6)
+				else if (z == 5 && xman == 0 && yman-1 == 16)
 				{
 					xman = 1;
 					yman = 16;
+				}
+				else if (z == 5 && xman == 16 && yman-1 == 9)
+				{
+					xman = 15;
+					yman = 0;
 				}
 				else if (z == 7)
 				{
@@ -504,7 +532,7 @@ void move ()
 				}
 				else if (z == 14)
 				{
-					xman = 1;
+					xman = 15;
 					yman = 7;
 				}
 				if (z > zmax)
@@ -535,15 +563,20 @@ void move ()
 					xman = 16;
 					yman = 15;
 				}
-				else if (z == 5)
-				{
-					xman = 0;
-					yman = 15;
-				}
 				else if (z == 6)
 				{
 					xman = 9;
 					yman = 1;
+				}
+				else if (z == 5 && xman == 0 && yman-1 == 16)
+				{
+					xman = 0;
+					yman = 15;
+				}
+				else if (z == 5 && xman == 16 && yman-1 == 8)
+				{
+					xman = 15;
+					yman = 0;
 				}
 				else if (z == 7)
 				{
@@ -580,11 +613,6 @@ void move ()
 					xman = 14;
 					yman = 15;
 				}
-				else if (z == 14)
-				{
-					xman = 15;
-					yman = 8;
-				}
 				SetMap(z,xman,yman,100);
 			}
 			else if (map[z][xman][yman-1] == 104)                                            //与白发老人讲话
@@ -599,9 +627,13 @@ void move ()
 			{
 				TalkPrincess(z);
 			}
-			else if (map[z][xman][yman-1] == 107)                                            //与Boss谈话
+			else if (map[z][xman][yman-1] == 108)                                            //与YYJ谈话
 			{
-				TalkBoss(z);
+				TalkBoss(1);
+			}
+			else if (map[z][xman][yman-1] == 109)                                            //与LZH谈话
+			{
+				TalkBoss(2);
 			}
 			else
 			{
@@ -626,6 +658,13 @@ void move ()
 				xman -= 1;
 				SetMap(z,xman,yman,102);
 				SetMap(z,xman+1,yman,1);
+			}
+			else if (map[z][xman-1][yman] == 5)                                       //前方是魔法门
+			{
+				if (map[10][16][10] == 1)
+				{
+					map[z][xman-1][yman] = 1;
+				}
 			}
 			else if ((map[z][xman-1][yman] >= 300)&&(map[z][xman-1][yman] <= 500))        //前方是怪物
 			{
@@ -731,15 +770,20 @@ void move ()
 					xman = 8;
 					yman = 7;
 				}
+				else if (z == 6 && xman-1 == 0 && yman == 16)
+				{
+					xman = 1;
+					yman = 16;
+				}
+				else if (z == 6  && xman-1 == 16 && yman == 0)
+				{
+					xman = 15;
+					yman = 8;
+				}
 				else if (z == 5)
 				{
 					xman = 0;
 					yman = 1;
-				}
-				else if (z == 6)
-				{
-					xman = 1;
-					yman = 16;
 				}
 				else if (z == 7)
 				{
@@ -778,7 +822,7 @@ void move ()
 				}
 				else if (z == 14)
 				{
-					xman = 1;
+					xman = 15;
 					yman = 7;
 				}
 				if (z > zmax)
@@ -809,15 +853,20 @@ void move ()
 					xman = 16;
 					yman = 15;
 				}
-				else if (z == 5)
-				{
-					xman = 0;
-					yman = 15;
-				}
 				else if (z == 6)
 				{
 					xman = 9;
 					yman = 1;
+				}
+				else if (z == 5 && xman-1 == 0 && yman == 16)
+				{
+					xman = 0;
+					yman = 15;
+				}
+				else if (z == 5 && xman-1 == 16 && yman == 8)
+				{
+					xman = 15;
+					yman = 0;
 				}
 				else if (z == 7)
 				{
@@ -854,11 +903,6 @@ void move ()
 					xman = 14;
 					yman = 15;
 				}
-				else if (z == 14)
-				{
-					xman = 15;
-					yman = 8;
-				}
 				SetMap(z,xman,yman,100);
 			}
 			else if (map[z][xman-1][yman] == 104)                                            //与白发老人讲话
@@ -873,9 +917,13 @@ void move ()
 			{
 				TalkPrincess(z);
 			}
-			else if (map[z][xman-1][yman] == 107)                                            //与Boss谈话
+			else if (map[z][xman-1][yman] == 108)                                            //与YYJ谈话
 			{
-				TalkBoss(z);
+				TalkBoss(1);
+			}
+			else if (map[z][xman-1][yman] == 109)                                            //与LZH谈话
+			{
+				TalkBoss(2);
 			}
 			else
 			{
@@ -900,6 +948,13 @@ void move ()
 				xman += 1;
 				SetMap(z,xman,yman,103);
 				SetMap(z,xman-1,yman,1);
+			}
+			else if (map[z][xman+1][yman] == 5)                                       //前方是魔法门
+			{
+				if (map[10][16][10] == 1)
+				{
+					map[z][xman+1][yman] = 1;
+				}
 			}
 			else if ((map[z][xman+1][yman] >= 300)&&(map[z][xman+1][yman] <= 500))        //前方是怪物
 			{
@@ -1005,15 +1060,20 @@ void move ()
 					xman = 8;
 					yman = 7;
 				}
+				else if (z == 6 && xman+1 == 0 && yman == 16)
+				{
+					xman = 1;
+					yman = 16;
+				}
+				else if (z == 6  && xman+1 == 16 && yman == 0)
+				{
+					xman = 15;
+					yman = 8;
+				}
 				else if (z == 5)
 				{
 					xman = 0;
 					yman = 1;
-				}
-				else if (z == 6)
-				{
-					xman = 1;
-					yman = 16;
 				}
 				else if (z == 7)
 				{
@@ -1052,7 +1112,7 @@ void move ()
 				}
 				else if (z == 14)
 				{
-					xman = 1;
+					xman = 15;
 					yman = 7;
 				}
 				if (z > zmax)
@@ -1083,15 +1143,20 @@ void move ()
 					xman = 16;
 					yman = 15;
 				}
-				else if (z == 5)
-				{
-					xman = 0;
-					yman = 15;
-				}
 				else if (z == 6)
 				{
 					xman = 9;
 					yman = 1;
+				}
+				else if (z == 5 && xman+1 == 0 && yman == 16)
+				{
+					xman = 0;
+					yman = 15;
+				}
+				else if (z == 5 && xman+1 == 16 && yman == 8)
+				{
+					xman = 15;
+					yman = 0;
 				}
 				else if (z == 7)
 				{
@@ -1128,11 +1193,6 @@ void move ()
 					xman = 14;
 					yman = 15;
 				}
-				else if (z == 14)
-				{
-					xman = 15;
-					yman = 8;
-				}
 				SetMap(z,xman,yman,100);
 			}
 			else if (map[z][xman+1][yman] == 104)                                            //与白发老人讲话
@@ -1147,9 +1207,13 @@ void move ()
 			{
 				TalkPrincess(z);
 			}
-			else if (map[z][xman+1][yman] == 107)                                            //与Boss谈话
+			else if (map[z][xman+1][yman] == 108)                                            //与YYJ谈话
 			{
-				TalkBoss(z);
+				TalkBoss(1);
+			}
+			else if (map[z][xman+1][yman] == 109)                                            //与LZH谈话
+			{
+				TalkBoss(2);
 			}
 			else
 			{

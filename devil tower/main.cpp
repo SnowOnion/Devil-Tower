@@ -3,6 +3,7 @@
 #include <graphics.h>
 #include "man.h"
 #include "display.h"
+#include <ctime>
 extern int z;
 
 
@@ -25,6 +26,7 @@ int main()
 	line(500,500,200,500);
 	line(200,500,200,400);
 	
+	srand((unsigned)time(NULL));
 
 	int control=1;
 	while (control!=0)
