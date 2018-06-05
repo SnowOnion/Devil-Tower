@@ -173,6 +173,9 @@ void saveGame(void)
 		TCHAR nosave3[] = _T("No Save Here!");
 		outtextxy(440,442,nosave3);
 	}
+	fclose(filePtr1);
+	fclose(filePtr2);
+	fclose(filePtr3);
 	line(180,225,650,225);
 	line(650,225,650,275);
 	line(650,275,180,275);
@@ -661,7 +664,6 @@ void loadGame(int number)
 			saved1 = false;
 		if (saved1)
 		{
-			FILE* filePtr1 = fopen("save1.txt","r");
 			char aAttack1[10];
 			fgets(aAttack1,10,filePtr1);
 			displayattack = atoi(aAttack1);
@@ -702,7 +704,6 @@ void loadGame(int number)
 			saved2 = false;
 		if(saved2)
 		{
-			FILE* filePtr2 = fopen("save2.txt","r");
 			char aAttack2[10];
 			fgets(aAttack2,10,filePtr2);
 			displayattack = atoi(aAttack2);
@@ -743,7 +744,6 @@ void loadGame(int number)
 			saved3 = false;
 		if(saved3)
 		{
-			FILE* filePtr3 = fopen("save3.txt","r");
 			char aAttack3[10];
 			fgets(aAttack3,10,filePtr3);
 			displayattack = atoi(aAttack3);
@@ -774,6 +774,9 @@ void loadGame(int number)
 			TCHAR nosave3[] = _T("No Save Here!");
 			outtextxy(440,442,nosave3);
 		}
+		fclose(filePtr1);
+		fclose(filePtr2);
+		fclose(filePtr3);
 
 		line(180,225,650,225);
 		line(650,225,650,275);
@@ -999,6 +1002,7 @@ void loadGame(int number)
 						}
 					}
 				}
+				fclose(filePtr);
 			}
 			display(z);
 			while(true)
