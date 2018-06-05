@@ -11,7 +11,7 @@
 extern int map[25][17][17];
 extern int Attack;
 extern int Defense;
-extern int Health;
+extern long Health;
 extern int Level;
 extern int Money;
 extern int Experience;
@@ -95,15 +95,24 @@ void display(int z)
 	{
 		IMAGE imgDictionary;
 		loadimage(&imgDictionary,_T("pictures\\210.jpg"),32,32);
-		putimage(62,310,&imgDictionary);
+		putimage(10,310,&imgDictionary);
+		TCHAR f[] = _T("F");
+		outtextxy(90,316,f);
 	}
 
 	if (HasTransfer)
 	{
 		IMAGE imgTransfer;
 		loadimage(&imgTransfer,_T("pictures\\209.jpg"),32,32);
-		putimage(62,350,&imgTransfer);
+		putimage(10,350,&imgTransfer);
+		TCHAR r[] = _T("R");
+		outtextxy(90,356,r);
 	}
+
+	TCHAR save[] = _T("Save Game:    X");
+	outtextxy(10,400,save);
+	TCHAR load[] = _T("Load Game:    L");
+	outtextxy(10,430,load);
 
 	int x,y;
 	IMAGE img0,img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,

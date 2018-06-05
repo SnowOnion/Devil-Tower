@@ -8,7 +8,7 @@
 
 extern int Attack;
 extern int Defense;
-extern int Health;
+extern long Health;
 extern int Level;
 extern int Money;
 extern int Experience;
@@ -267,6 +267,10 @@ void MoneyPurchase(int z)
 						loadimage(&imgTransfer,_T("pictures\\209.jpg"),32,32);
 						putimage(62,350,&imgTransfer);
 					}
+					TCHAR save[] = _T("Save Game:    X");
+					outtextxy(10,400,save);
+					TCHAR load[] = _T("Load Game:    L");
+					outtextxy(10,430,load);
 				}
 			}
 		}
@@ -401,6 +405,10 @@ void ExperiencePurchase(int z)
 						loadimage(&imgTransfer,_T("pictures\\209.jpg"),32,32);
 						putimage(62,350,&imgTransfer);
 					}
+					TCHAR save[] = _T("Save Game:    X");
+					outtextxy(10,400,save);
+					TCHAR load[] = _T("Load Game:    L");
+					outtextxy(10,430,load);
 				}
 			}
 		}
@@ -532,6 +540,10 @@ void ExperiencePurchase(int z)
 						loadimage(&imgTransfer,_T("pictures\\209.jpg"),32,32);
 						putimage(62,350,&imgTransfer);
 					}
+					TCHAR save[] = _T("Save Game:    X");
+					outtextxy(10,400,save);
+					TCHAR load[] = _T("Load Game:    L");
+					outtextxy(10,430,load);
 				}
 			}
 		}

@@ -7,8 +7,11 @@
 #include "display.h"
 #include "man.h"
 #include "talk.h"
+#include "dictionary.h"
+#include "transfer.h"
+#include "save.h"
 
-int Health = 1000;                                  //血量
+long Health = 1000;                                  //血量
 int Attack = 10;                                    //攻击力
 int Defense = 10;                                   //防御力
 float Agility = 1.0;                                //敏捷度
@@ -42,7 +45,7 @@ void AddHealth (int Increment)
 	Health += Increment;
 }
 
-void AddAgility (int Increment)
+void AddAgility (float Increment)
 {
 	Agility += Increment;
 	DodgeProbability = 4 * sqrt(Agility);
@@ -68,6 +71,8 @@ void move ()
 	char c='.';
 	while(!kbhit());
 	c=getch();
+	if (c >= 'A' && c <= 'Z')
+		c = c - ('A' - 'a');
 	switch (c)
 	{
 	case 's':
@@ -1227,8 +1232,20 @@ void move ()
 		display(z);
 		break;
 
+	case 'f': 
+		if(HasDictionary)
+			openDictionary();
+		break;
+	case 'r': 
+		if(HasTransfer)
+			openTransfer();
+		break;
+	case 'x':
+		saveGame();
+		break;
+	case 'l':
+		loadGame(1);
+		break;
 	default: break;
 	}
-
-
 }

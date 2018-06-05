@@ -8,7 +8,7 @@ extern int map[25][17][17];
 extern int z;
 extern int Attack;
 extern int Defense;
-extern int Health;
+extern long Health;
 
 void Merge(int A[], int left, int mid, int right)
 {
@@ -439,24 +439,39 @@ void openDictionary()
 				}
 			}
 		}
-		MOUSEMSG m;
-		m = GetMouseMsg();
-		if (m.uMsg == WM_LBUTTONDOWN && m.x <= 300 && m.x >= 200 && m.y <= 544 && m.y >= 500 && page >= 1)
+		if (exit == 0)
 		{
-			page -= 1;
-			clearrectangle(156,30,700,500);
+			MOUSEMSG m;
+			while (!MouseHit()&&!kbhit())
+			{}
+			if (MouseHit())
+				m = GetMouseMsg();
+			if (kbhit())
+			{
+				char c = getch();
+				if (c == 'f' || c == 'F')
+				{
+					exit = 1;
+					display(z);
+					break;
+				}
+			}
+			if (m.uMsg == WM_LBUTTONDOWN && m.x <= 300 && m.x >= 200 && m.y <= 544 && m.y >= 500 && page >= 1)
+			{
+				page -= 1;
+				clearrectangle(156,30,700,500);
+			}
+			if (m.uMsg == WM_LBUTTONDOWN && m.x <= 500 && m.x >= 400 && m.y <= 544 && m.y >= 500 && page < (99-n0)/5)
+			{
+				page += 1;
+				clearrectangle(156,30,700,500);
+			}
+			if (m.uMsg == WM_LBUTTONDOWN && m.x <= 700 && m.x >= 600 && m.y <= 544 && m.y >= 500)
+			{
+				exit = 1;
+				display(z);
+				break;
+			}
 		}
-		if (m.uMsg == WM_LBUTTONDOWN && m.x <= 500 && m.x >= 400 && m.y <= 544 && m.y >= 500 && page < (99-n0)/5)
-		{
-			page += 1;
-			clearrectangle(156,30,700,500);
-		}
-		if (m.uMsg == WM_LBUTTONDOWN && m.x <= 700 && m.x >= 600 && m.y <= 544 && m.y >= 500)
-		{
-			exit = 1;
-			display(z);
-			break;
-		}
-
 	}
 }

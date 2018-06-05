@@ -86,6 +86,7 @@
     <ClCompile Include="talk.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="transfer.cpp" />
+    <ClCompile Include="save.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dictionary.h" />
@@ -97,6 +98,7 @@
     <ClInclude Include="purchase.h" />
     <ClInclude Include="talk.h" />
     <ClInclude Include="transfer.h" />
+    <ClInclude Include="save.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

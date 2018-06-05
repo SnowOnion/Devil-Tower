@@ -8,9 +8,10 @@
 #include "man.h"
 #include "ID.h"
 #include <ctime>
+#include "save.h"
 extern int Attack;
 extern int Defense;
-extern int Health;
+extern long Health;
 extern int z;
 extern float Agility;
 extern float DodgeProbability;
@@ -346,7 +347,7 @@ void fight (int ID)
 				SetMap(3,14,13,1);
 				display(z);
 			}
-			
+
 		}
 		if (Health <= 0)
 		{
@@ -355,7 +356,22 @@ void fight (int ID)
 			clearrectangle(0,0,700,544);
 			RECT dieRect = {0,0,700,544};
 			drawtext(_T("You Died!"),&dieRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			Sleep(100000);
+			RECT loadRect = {200,400,500,500};
+			drawtext(_T("Load Game"),&loadRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
+			line(200,425,500,425);
+			line(500,425,500,475);
+			line(500,475,200,475);
+			line(200,475,200,425);
+			MOUSEMSG m;
+			while (true)
+			{
+				m = GetMouseMsg();
+				if (m.uMsg == WM_LBUTTONDOWN && m.x <= 500 && m.x >= 200 && m.y <= 475 && m.y >= 425)
+				{
+					loadGame(2);
+					break;
+				}
+			}
 		}
 	}
 }
