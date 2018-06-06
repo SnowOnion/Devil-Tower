@@ -71,8 +71,26 @@ void move ()
 	char c='.';
 	while(!kbhit());
 	c=getch();
-	if (c >= 'A' && c <= 'Z')
-		c = c - ('A' - 'a');
+	if(isascii(c))
+	{
+		if (c >= 'A' && c <= 'Z')
+			c = c - ('A' - 'a');
+	}
+	else
+	{
+		c = getch();
+		switch(c)
+		{
+		case 72:
+			c = 'w';break;
+		case 75:
+			c = 'a';break;
+		case 77:
+			c = 'd';break;
+		case 80:
+			c = 's';break;
+		}
+	}
 	switch (c)
 	{
 	case 's':
