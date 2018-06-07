@@ -6,6 +6,7 @@
 #include <ctime>
 #include "save.h"
 extern int z;
+extern bool purchasing;
 
 
 int main()

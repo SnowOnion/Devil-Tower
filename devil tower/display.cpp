@@ -60,7 +60,7 @@ void display(int z)
 	_stprintf(level,TEXT("%d"),Level);
 	outtextxy(90,130,level);
 
-	TCHAR strmoney[] = _T("money");
+	TCHAR strmoney[] = _T("coin");
 	outtextxy(10,150,strmoney);
 	TCHAR money[10];
 	_stprintf(money,TEXT("%d"),Money);
@@ -488,11 +488,11 @@ void display(int z)
 		{
 			MOUSEMSG m;
 			m = GetMouseMsg();
-			if (m.uMsg == WM_LBUTTONDOWN && m.x <= 156 && m.x >= 0 && m.y <= 330 && m.y >= 290 && HasDictionary)
+			if (m.uMsg == WM_LBUTTONDOWN && m.x <= 156 && m.x >= 0 && m.y <= 340 && m.y >= 300 && HasDictionary)
 			{
 				openDictionary();
 			}
-			else if (m.uMsg == WM_LBUTTONDOWN && m.x <= 156 && m.x >= 0 && m.y <= 370 && m.y >= 330 && HasTransfer)
+			else if (m.uMsg == WM_LBUTTONDOWN && m.x <= 156 && m.x >= 0 && m.y <= 390 && m.y >= 350 && HasTransfer)
 			{
 				openTransfer();
 			}

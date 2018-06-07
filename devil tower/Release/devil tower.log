@@ -1,13 +1,37 @@
-﻿生成启动时间为 2018/6/6 11:19:03。
+﻿生成启动时间为 2018/6/7 11:43:12。
      1>项目“C:\Users\CreeperJimTHU\documents\visual studio 2012\Projects\devil tower\devil tower\devil tower.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt man.cpp
-         man.cpp
-     1>man.cpp(72): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt talk.cpp
+         talk.cpp
+     1>talk.cpp(16): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(133) : 参见“kbhit”的声明
-     1>man.cpp(73): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>talk.cpp(18): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
-     1>man.cpp(81): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>talk.cpp(20): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
+     1>talk.cpp(28): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(133) : 参见“kbhit”的声明
+     1>talk.cpp(30): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
+     1>talk.cpp(32): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
+     1>talk.cpp(43): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(133) : 参见“kbhit”的声明
+     1>talk.cpp(45): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
+     1>talk.cpp(47): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
+     1>talk.cpp(59): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(133) : 参见“kbhit”的声明
+     1>talk.cpp(61): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
+     1>talk.cpp(63): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
+     1>talk.cpp(77): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(133) : 参见“kbhit”的声明
+     1>talk.cpp(79): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
+     1>talk.cpp(81): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\conio.h(131) : 参见“getch”的声明
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\CreeperJimTHU\documents\visual studio 2012\Projects\devil tower\Release\devil tower.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\CreeperJimTHU\documents\visual studio 2012\Projects\devil tower\Release\devil tower.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\CreeperJimTHU\documents\visual studio 2012\Projects\devil tower\Release\devil tower.lib" /MACHINE:X86 /SAFESEH Release\dictionary.obj
@@ -22,15 +46,15 @@
          Release\transfer.obj
          Release\save.obj
          正在生成代码
-     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\id.cpp(505): warning C4715: “getExperience”: 不是所有的控件路径都返回值
-     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\id.cpp(345): warning C4715: “getMonsterHealth”: 不是所有的控件路径都返回值
      1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\id.cpp(425): warning C4715: “getMoney”: 不是所有的控件路径都返回值
-     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\id.cpp(185): warning C4715: “getMonsterAttack”: 不是所有的控件路径都返回值
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\id.cpp(345): warning C4715: “getMonsterHealth”: 不是所有的控件路径都返回值
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\id.cpp(505): warning C4715: “getExperience”: 不是所有的控件路径都返回值
      1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\id.cpp(265): warning C4715: “getMonsterDefense”: 不是所有的控件路径都返回值
+     1>c:\users\creeperjimthu\documents\visual studio 2012\projects\devil tower\devil tower\id.cpp(185): warning C4715: “getMonsterAttack”: 不是所有的控件路径都返回值
          已完成代码的生成
          devil tower.vcxproj -> C:\Users\CreeperJimTHU\documents\visual studio 2012\Projects\devil tower\Release\devil tower.exe
      1>已完成生成项目“C:\Users\CreeperJimTHU\documents\visual studio 2012\Projects\devil tower\devil tower\devil tower.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:02.34
+已用时间 00:00:02.81

@@ -189,11 +189,11 @@ void move ()
 			}
 			else if (map[z][xman][yman+1] == 10 || map[z][xman - 1][yman + 1] == 10 ||map[z][xman - 2][yman + 1] == 10)                                             //花钱商店
 			{
-				MoneyPurchase(z);
+					MoneyPurchase(z);
 			}
 			else if (map[z][xman][yman+1] == 11 || map[z][xman - 1][yman + 1] == 11 ||map[z][xman - 2][yman + 1] == 11)                                             //经验商店
 			{
-				ExperiencePurchase(z);
+					ExperiencePurchase(z);
 			}
 			else if (map[z][xman][yman+1] == 8)                                              //上楼
 			{
@@ -478,11 +478,11 @@ void move ()
 			}
 			else if (map[z][xman][yman-1] == 10 || map[z][xman-1][yman-1] == 10 || map[z][xman-2][yman-1] == 10)                                             //花钱商店
 			{
-				MoneyPurchase(z);
+					MoneyPurchase(z);
 			}
 			else if (map[z][xman][yman-1] == 11 || map[z][xman-1][yman-1] == 11 || map[z][xman-2][yman-1] == 11)                                             //经验商店
 			{
-				ExperiencePurchase(z);
+					ExperiencePurchase(z);
 			}
 			else if (map[z][xman][yman-1] == 8)                                              //上楼
 			{
@@ -768,11 +768,11 @@ void move ()
 			}
 			else if (map[z][xman-1][yman] == 10 || map[z][xman - 2][yman] == 10 ||map[z][xman - 3][yman] == 10)                                             //花钱商店
 			{
-				MoneyPurchase(z);
+					MoneyPurchase(z);
 			}
 			else if (map[z][xman-1][yman] == 11 || map[z][xman - 2][yman] == 11 ||map[z][xman - 3][yman] == 11)                                             //经验商店
 			{
-				ExperiencePurchase(z);
+					ExperiencePurchase(z);
 			}
 			else if (map[z][xman-1][yman] == 8)                                              //上楼
 			{
@@ -1058,11 +1058,11 @@ void move ()
 			}
 			else if (map[z][xman+1][yman] == 10 || map[z][xman + 2][yman] == 10 ||map[z][xman + 3][yman] == 10)                                           //花钱商店
 			{
-				MoneyPurchase(z);
+					MoneyPurchase(z);
 			}
 			else if (map[z][xman+1][yman] == 10 || map[z][xman + 2][yman] == 10 ||map[z][xman + 3][yman] == 10)                                           //经验商店
 			{
-				ExperiencePurchase(z);
+					ExperiencePurchase(z);
 			}
 			else if (map[z][xman+1][yman] == 8)                                              //上楼
 			{

@@ -18,6 +18,7 @@ extern float DodgeProbability;
 
 void fight (int ID)
 {
+	char waste1,waste2;
 	clearrectangle(156,0,700,544);
 	int monsterattack = getMonsterAttack(ID);
 	int monsterdefense = getMonsterDefense(ID);
@@ -270,6 +271,12 @@ void fight (int ID)
 		Sleep(50);
 		if (i%2==0)
 		{
+			while (kbhit())
+			{
+				waste1 = getch();
+				if (!isascii(waste1))
+					waste2 = getch();
+			}
 			clearrectangle(650,240,700,270);
 			TCHAR strmonsterhealth[10];
 			_stprintf(strmonsterhealth,TEXT("%d"),monsterhealth);
@@ -290,6 +297,12 @@ void fight (int ID)
 		}
 		else 
 		{
+			while (kbhit())
+			{
+				waste1 = getch();
+				if (!isascii(waste1))
+					waste2 = getch();
+			}
 			clearrectangle(250,240,300,270);
 			TCHAR strhealth[10];
 			_stprintf(strhealth,TEXT("%d"),Health);
