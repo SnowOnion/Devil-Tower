@@ -21,18 +21,9 @@ int main()
 	RECT exit={0,400,700,500};
 	drawtext(_T("Exit Game"),&exit,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 	MOUSEMSG m;
-	line(200,225,500,225);
-	line(500,225,500,275);
-	line(500,275,200,275);
-	line(200,275,200,225);
-	line(200,325,500,325);
-	line(500,325,500,375);
-	line(500,375,200,375);
-	line(200,375,200,325);
-	line(200,425,500,425);
-	line(500,425,500,475);
-	line(500,475,200,475);
-	line(200,475,200,425);
+	rectangle(200,225,500,275);
+	rectangle(200,325,500,375);
+	rectangle(200,425,500,475);
 
 	srand((unsigned)time(NULL));
 

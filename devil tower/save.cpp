@@ -176,25 +176,11 @@ void saveGame(void)
 	fclose(filePtr1);
 	fclose(filePtr2);
 	fclose(filePtr3);
-	line(180,225,650,225);
-	line(650,225,650,275);
-	line(650,275,180,275);
-	line(180,275,180,225);
+	rectangle(180,225,650,275);
+	rectangle(180,325,650,375);
+	rectangle(180,425,650,475);
+	rectangle(350,500,480,540);
 
-	line(180,325,650,325);
-	line(650,325,650,375);
-	line(650,375,180,375);
-	line(180,375,180,325);
-
-	line(180,425,650,425);
-	line(650,425,650,475);
-	line(650,475,180,475);
-	line(180,475,180,425);
-
-	line(350,500,480,500);
-	line(480,500,480,540);
-	line(480,540,350,540);
-	line(350,540,350,500);
 	FILE* filePtr;
 	MOUSEMSG m;
 	bool proceed = false;
@@ -477,25 +463,11 @@ void loadGame(int number)
 			TCHAR nosave3[] = _T("No Save Here!");
 			outtextxy(440,442,nosave3);
 		}
-		line(180,225,650,225);
-		line(650,225,650,275);
-		line(650,275,180,275);
-		line(180,275,180,225);
-
-		line(180,325,650,325);
-		line(650,325,650,375);
-		line(650,375,180,375);
-		line(180,375,180,325);
-
-		line(180,425,650,425);
-		line(650,425,650,475);
-		line(650,475,180,475);
-		line(180,475,180,425);
-
-		line(350,500,480,500);
-		line(480,500,480,540);
-		line(480,540,350,540);
-		line(350,540,350,500);
+		
+		rectangle(180,225,650,275);
+		rectangle(180,325,650,375);
+		rectangle(180,425,650,475);
+		rectangle(350,500,480,540);
 		bool proceed = false;
 		while (!kbhit() && !proceed)
 		{
@@ -778,25 +750,10 @@ void loadGame(int number)
 		fclose(filePtr2);
 		fclose(filePtr3);
 
-		line(180,225,650,225);
-		line(650,225,650,275);
-		line(650,275,180,275);
-		line(180,275,180,225);
-
-		line(180,325,650,325);
-		line(650,325,650,375);
-		line(650,375,180,375);
-		line(180,375,180,325);
-
-		line(180,425,650,425);
-		line(650,425,650,475);
-		line(650,475,180,475);
-		line(180,475,180,425);
-
-		line(350,500,480,500);
-		line(480,500,480,540);
-		line(480,540,350,540);
-		line(350,540,350,500);
+		rectangle(180,225,650,275);
+		rectangle(180,325,650,375);
+		rectangle(180,425,650,475);
+		rectangle(350,500,480,540);
 		bool proceed = false;
 		while (!proceed)
 		{
@@ -836,18 +793,9 @@ void loadGame(int number)
 					RECT exit={0,400,700,500};
 					drawtext(_T("Exit Game"),&exit,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 					MOUSEMSG m;
-					line(200,225,500,225);
-					line(500,225,500,275);
-					line(500,275,200,275);
-					line(200,275,200,225);
-					line(200,325,500,325);
-					line(500,325,500,375);
-					line(500,375,200,375);
-					line(200,375,200,325);
-					line(200,425,500,425);
-					line(500,425,500,475);
-					line(500,475,200,475);
-					line(200,475,200,425);
+					rectangle(200,225,500,275);
+					rectangle(200,325,500,375);
+					rectangle(200,425,500,475);
 					int control=1;
 					while (control!=0)
 					{

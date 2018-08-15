@@ -371,10 +371,8 @@ void fight (int ID)
 			drawtext(_T("You Died!"),&dieRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
 			RECT loadRect = {200,400,500,500};
 			drawtext(_T("Load Game"),&loadRect,DT_CENTER|DT_VCENTER|DT_SINGLELINE);
-			line(200,425,500,425);
-			line(500,425,500,475);
-			line(500,475,200,475);
-			line(200,475,200,425);
+			
+			rectangle(200,425,500,475);
 			MOUSEMSG m;
 			while (true)
 			{
